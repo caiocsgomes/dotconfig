@@ -10,3 +10,11 @@ I use nvim to code and this is my environment configuration as code
 - Zsh plugins -> plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 - Telescope -> install ripgrep
 
+## Scripts
+
+```bash
+## ~/.zshrc
+if [ -r ~/.config/.zshrc ]; then
+    source ~/.config/.zshrc
+fi
+```
