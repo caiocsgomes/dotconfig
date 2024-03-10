@@ -5,6 +5,7 @@ I use nvim to code and this is my environment configuration as code
 ## Dependencies and notes
 
 - Wezterm as terminal emulator
+- oh-my-zsh
 - Nerdfonts
 - Gruvbox darker for terminal and gruvbox for nvim
 - Zsh plugins -> plugins=(git zsh-autosuggestions zsh-syntax-highlighting)

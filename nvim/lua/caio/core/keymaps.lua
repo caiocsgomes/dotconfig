@@ -6,7 +6,7 @@ local keymap = vim.keymap
 
 --general
 keymap.set("i","jk","<ESC>")
-keymap.set("n", "oo", "o<ESC>k")
+keymap.set("n","<leader>o","o<ESC>k") -- no highlights
 
 keymap.set("n","<leader>nh",":nohl<CR>") -- no highlights
 
