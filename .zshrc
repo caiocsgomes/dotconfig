@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 
 ## Caio customization
 alias homelab="cd ~/personal/homelab"
+alias cdpersonal="cd ~/personal"
 alias cdcode="cd ~/code"
 alias k="kubectl"
-alias tshsudo="tsh login --request-roles continuous-integration-privileged"
 alias vim="nvim"
