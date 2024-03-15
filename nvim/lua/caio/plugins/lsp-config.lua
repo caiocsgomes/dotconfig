@@ -18,6 +18,7 @@ registry.refresh(function ()
 end)
 
 -- This will setup each LSP installed with Mason
+-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#default-configuration
 require("mason-lspconfig").setup({
   ensure_installed = { "lua_ls",  "ansiblels", "bashls", "dockerls", "docker_compose_language_service", "gopls", "jsonls", "marksman", "jedi_language_server", "hydra_lsp", "terraformls" }
 })
@@ -31,6 +32,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
+-- Setting up lsps
 lspconfig.lua_ls.setup {
   settings = {
     Lua = {
@@ -52,6 +54,7 @@ lspconfig.dockerls.setup({})
 lspconfig.ansiblels.setup({})
 lspconfig.terraformls.setup({})
 
+-- Setting up keymaps
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
@@ -84,43 +87,45 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 
 -- import null-ls plugin safely
-local setup, null_ls = pcall(require, "null-ls")
-if not setup then
-  return
-end
-
--- for conciseness
-local formatting = null_ls.builtins.formatting -- to setup formatters
-local diagnostics = null_ls.builtins.diagnostics -- to setup linters
-
--- to setup format on save
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-
--- configure null_ls
-null_ls.setup({
-  -- setup formatters & linters
-  sources = {
-    --  to disable file types use
-    formatting.stylua, -- lua formatter
-    formatting.goimports_reviser,
-  },
-  -- configure format on save
-  on_attach = function(current_client, bufnr)
-    if current_client.supports_method("textDocument/formatting") then
-      vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        group = augroup,
-        buffer = bufnr,
-        callback = function()
-          vim.lsp.buf.format({
-            filter = function(client)
-              --  only use null-ls for formatting instead of lsp server
-              return client.name == "null-ls"
-            end,
-            bufnr = bufnr,
-          })
-        end,
-      })
-    end
-  end,
-})
+-- local setup, null_ls = pcall(require, "null-ls")
+-- if not setup then
+--   return
+-- end
+--
+-- -- for conciseness
+-- local formatting = null_ls.builtins.formatting -- to setup formatters
+-- local diagnostics = null_ls.builtins.diagnostics -- to setup linters
+--
+-- -- to setup format on save
+-- local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+--
+-- -- configure null_ls
+-- null_ls.setup({
+--   -- setup formatters & linters
+--   sources = {
+--     --  to disable file types use
+--     diagnostics.terraform_validate,
+--     formatting.stylua, -- lua formatter
+--     formatting.goimports_reviser,
+--   },
+--   -- configure format on save
+--   on_attach = function(current_client, bufnr)
+--     if current_client.supports_method("textDocument/formatting") then
+--       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+--       vim.api.nvim_create_autocmd("BufWritePre", {
+--         group = augroup,
+--         buffer = bufnr,
+--         callback = function()
+--           -- vim.lsp.buf.format({
+--           --   filter = function(client)
+--           --     --  only use null-ls for formatting instead of lsp server
+--           --     return client.name == "null-ls"
+--           --   end,
+--           --   bufnr = bufnr,
+--           -- })
+--           vim.lsp.buf.formatting_sync()
+--         end,
+--       })
+--     end
+--   end,
+-- })
