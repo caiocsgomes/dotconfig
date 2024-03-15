@@ -1,3 +1,4 @@
+-- https://github.com/nvim-tree/nvim-tree.lua/blob/master/doc/nvim-tree-lua.txt
 -- import nvim-tree plugin safely
 local setup, _ = pcall(require, "nvim-tree")
 if not setup then
