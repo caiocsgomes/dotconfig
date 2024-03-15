@@ -13,12 +13,13 @@ registry.refresh(function ()
      "json-lsp",
      "marksman",
      "jedi-language-server",
-     "hydra-lsp")
+     "hydra-lsp",
+     "terraform-ls")
 end)
 
 -- This will setup each LSP installed with Mason
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls",  "ansiblels", "bashls", "dockerls", "docker_compose_language_service", "gopls", "jsonls", "marksman", "jedi_language_server", "hydra_lsp" }
+  ensure_installed = { "lua_ls",  "ansiblels", "bashls", "dockerls", "docker_compose_language_service", "gopls", "jsonls", "marksman", "jedi_language_server", "hydra_lsp", "terraformls" }
 })
 
 -- Advertising auto completion to lsp
@@ -30,7 +31,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
-require("lspconfig").lua_ls.setup {
+lspconfig.lua_ls.setup {
   settings = {
     Lua = {
       diagnostics = {
@@ -46,10 +47,10 @@ require("lspconfig").lua_ls.setup {
   }
 }
 
-require("lspconfig").gopls.setup({})
-require("lspconfig").dockerls.setup({})
-require("lspconfig").ansiblels.setup({})
-
+lspconfig.gopls.setup({})
+lspconfig.dockerls.setup({})
+lspconfig.ansiblels.setup({})
+lspconfig.terraformls.setup({})
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
