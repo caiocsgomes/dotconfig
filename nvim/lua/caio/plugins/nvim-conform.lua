@@ -5,6 +5,7 @@ require("conform").setup({
 		-- Conform will run multiple formatters sequentially
 		python = { "isort", "black" },
 		terraform = { "terraform_fmt" },
+		go = { "goimports", "gofmt" },
 	},
 })
 
