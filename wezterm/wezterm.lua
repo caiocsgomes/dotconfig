@@ -13,28 +13,12 @@ config.keys = {
 	{ key = "RightArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bf" }) },
 	{ key = "LeftArrow", mods = "CMD|OPT", action = wezterm.action({ ActivateTabRelative = -1 }) },
 	{ key = "RightArrow", mods = "CMD|OPT", action = wezterm.action({ ActivateTabRelative = 1 }) },
-	{ key = "h", mods = "CMD", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	{
-		key = "LeftArrow",
-		mods = "CTRL|SHIFT",
-		action = act.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "RightArrow",
-		mods = "CTRL|SHIFT",
-		action = act.ActivatePaneDirection("Right"),
-	},
-	{
-		key = "UpArrow",
-		mods = "CTRL|SHIFT",
-		action = act.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "DownArrow",
-		mods = "CTRL|SHIFT",
-		action = act.ActivatePaneDirection("Down"),
-	},
-	{ key = "v", mods = "CMD", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "d", mods = "CMD", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "r", mods = "CMD", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "LeftArrow", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },
+	{ key = "RightArrow", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Right") },
+	{ key = "UpArrow", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
+	{ key = "DownArrow", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
 }
 -- and finally, return the configuration to wezterm
 return config

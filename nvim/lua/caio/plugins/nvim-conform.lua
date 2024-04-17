@@ -6,6 +6,7 @@ require("conform").setup({
 		python = { "isort", "black" },
 		terraform = { "terraform_fmt" },
 		go = { "goimports", "gofmt" },
+		yaml = { "yamlfmt" },
 	},
 })
 

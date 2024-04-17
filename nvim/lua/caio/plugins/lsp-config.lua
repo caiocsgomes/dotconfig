@@ -13,7 +13,6 @@ registry.refresh(function()
 		"json-lsp",
 		"marksman",
 		"jedi-language-server",
-		"hydra-lsp",
 		"terraform-ls"
 	)
 end)
@@ -31,7 +30,6 @@ require("mason-lspconfig").setup({
 		"jsonls",
 		"marksman",
 		"jedi_language_server",
-		"hydra_lsp",
 		"terraformls",
 	},
 })
@@ -68,7 +66,6 @@ lspconfig.bashls.setup({})
 lspconfig.docker_compose_language_service.setup({})
 lspconfig.jsonls.setup({})
 lspconfig.marksman.setup({}) -- Markdown
-lspconfig.hydra_lsp.setup({}) -- yaml
 
 -- Setting up keymaps
 vim.api.nvim_create_autocmd("LspAttach", {
