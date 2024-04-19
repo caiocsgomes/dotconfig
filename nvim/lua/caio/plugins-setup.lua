@@ -37,7 +37,7 @@ return packer.startup(function(use)
 	-- use("rebelot/kanagawa.nvim")
 	use("ellisonleao/gruvbox.nvim")
 
-	-- commenting with gc
+	-- commenting with gcc
 	use("numToStr/Comment.nvim")
 
 	-- file explorer

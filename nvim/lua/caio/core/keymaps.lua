@@ -37,3 +37,6 @@ keymap.set("n", "<Tab>", "<C-w>w")
 -- resize windows
 keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
 keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+
+-- format on command
+keymap.set("n", "gff", "<cmd>Format<cr>")
