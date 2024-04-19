@@ -107,3 +107,5 @@ alias cdpersonal="cd ~/personal"
 alias cdcode="cd ~/code"
 alias k="kubectl"
 alias vim="nvim"
+
+alias config="nvim ~/.config/"
