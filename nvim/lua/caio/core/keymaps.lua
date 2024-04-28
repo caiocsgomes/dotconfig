@@ -34,6 +34,15 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 keymap.set("n", "<Tab>", "<C-w>w")
 -- keymap.set("n", "<Tab>" ,"<C-w>w", {noremap = true, silent = true})
 
+
+
+
+
+
+
+
+
+
 -- resize windows
 keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
 keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically

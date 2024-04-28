@@ -1,0 +1,4 @@
+- TODO: Work -> One meaningful delivery
+- TODO: Study -> 1h of Study
+- TODO: Project -> 1h of Project
+- TODO: Exercise

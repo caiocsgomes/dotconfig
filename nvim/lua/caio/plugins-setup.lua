@@ -97,6 +97,8 @@ return packer.startup(function(use)
 	-- copilot (needs to run :Copilot setup manually :( as specified in the docs
 	use("github/copilot.vim")
 
+  -- wakatime
+  use("wakatime/vim-wakatime")
 	-- all below came from the docs
 	if packer_bootstrap then
 		require("packer").sync()
