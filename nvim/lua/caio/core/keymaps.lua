@@ -7,11 +7,9 @@ local keymap = vim.keymap
 --general
 keymap.set("i", "jk", "<ESC>")
 keymap.set("n", "<leader>o", "o<ESC>k")
-
 keymap.set("n", "<leader>nh", ":nohl<CR>") -- no highlights
 
 --keymap.set("n","x","_x") -- delete but not add to the register
-
 keymap.set("n", "<leader>+", "<C-a>") -- increase number with leader +
 keymap.set("n", "<leader>-", "<C-x>") -- decrease number with leader -
 
@@ -34,18 +32,15 @@ keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available 
 keymap.set("n", "<Tab>", "<C-w>w")
 -- keymap.set("n", "<Tab>" ,"<C-w>w", {noremap = true, silent = true})
 
-
-
-
-
-
-
-
-
-
 -- resize windows
 keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
 keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
 
 -- format on command
-keymap.set("n", "gff", "<cmd>Format<cr>")
+keymap.set("n", "<leader>cc", "<cmd>Format<cr>")
+
+-- todo comments
+keymap.set("n", "<leader>tt", "<cmd>TodoTelescope<cr>")
+
+-- lazy git
+keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")

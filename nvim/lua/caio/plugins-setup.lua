@@ -97,8 +97,28 @@ return packer.startup(function(use)
 	-- copilot (needs to run :Copilot setup manually :( as specified in the docs
 	use("github/copilot.vim")
 
-  -- wakatime
-  use("wakatime/vim-wakatime")
+	-- wakatime
+	use("wakatime/vim-wakatime")
+
+	-- todo-comments
+	use({
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("todo-comments").setup({})
+		end,
+		cmd = { "TodoTelescope" },
+	})
+
+	-- lazygit
+	-- nvim v0.7.2
+	use({
+		"kdheepak/lazygit.nvim",
+		-- optional for floating window border decoration
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 	-- all below came from the docs
 	if packer_bootstrap then
 		require("packer").sync()
