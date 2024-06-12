@@ -22,6 +22,7 @@ require("nvim-tree").setup({
 	},
 	view = {
 		width = "20%",
+    relativenumber = true,
 	},
 	renderer = {
 		group_empty = true,
