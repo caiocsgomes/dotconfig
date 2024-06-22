@@ -1,6 +1,10 @@
 require("mason").setup()
 
-local registry = require("mason-registry")
+local ok, registry = pcall(require, "mason-registry")
+if not ok then
+	print("Module mason-registry had an error loading")
+end
+
 -- https://github.com/mason-org/mason-registry/tree/2024-03-09-abrupt-vest/packages
 registry.refresh(function()
 	registry.get_package(
@@ -57,7 +61,23 @@ lspconfig.lua_ls.setup({
 	},
 })
 
-lspconfig.gopls.setup({})
+lspconfig.gopls.setup({
+	cmd = { "gopls", "serve" },
+	root_dir = lspconfig.util.root_pattern("go.mod", "go.work", ".git"),
+	filetypes = { "go", "gomod" },
+	on_attach = lsp_defaults.on_attach,
+	capabilities = lsp_defaults.capabilities,
+	settings = {
+		gopls = {
+			completeUnimported = true,
+			usePlaceholders = true,
+			analyses = {
+				unusedparams = true,
+				shadow = true,
+			},
+		},
+	},
+})
 lspconfig.dockerls.setup({})
 lspconfig.ansiblels.setup({})
 lspconfig.terraformls.setup({})
@@ -81,7 +101,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-    vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 		vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
 		vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
 		vim.keymap.set("n", "<space>wl", function()

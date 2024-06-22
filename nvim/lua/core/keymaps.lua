@@ -44,3 +44,12 @@ keymap.set("n", "<leader>tt", "<cmd>TodoTelescope<cr>")
 
 -- lazy git
 keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
+
+-- nvim dap
+vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" })
+keymap.set("n", "<F5>", require("dap").continue)
+keymap.set("n", "<F10>", require("dap").step_over)
+keymap.set("n", "<F11>", require("dap").step_into)
+keymap.set("n", "<F12>", require("dap").step_out)
+keymap.set("n", "<leader>b", require("dap").toggle_breakpoint)
