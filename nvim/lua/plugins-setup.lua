@@ -28,10 +28,14 @@ end
 
 -- add list of plugins to install
 return packer.startup(function(use)
-	-- all above came from the docs and from https://www.youtube.com/watch?v=vdn_pKJUda8&t=2s
+	------------------------------------------------------------------------------------------
+	-- all above came from the docs: https://github.com/wbthomason/packer.nvim
+	------------------------------------------------------------------------------------------
 	-- packer can manage itself
 	use("wbthomason/packer.nvim")
-	use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
+
+  -- lua functions that many plugins use
+	use("nvim-lua/plenary.nvim")
 
 	-- theme
 	-- use("rebelot/kanagawa.nvim")
@@ -70,6 +74,7 @@ return packer.startup(function(use)
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-nvim-lsp",
 	})
+
 	-- snippets
 	use("L3MON4D3/LuaSnip") -- snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
@@ -81,10 +86,7 @@ return packer.startup(function(use)
 	use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 	use("neovim/nvim-lspconfig") -- easily configure language servers
 
-	-- formatting & linting
-	-- use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
-	-- use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
-	--
+	-- formatting
 	use({
 		"stevearc/conform.nvim",
 		config = function()
@@ -112,30 +114,24 @@ return packer.startup(function(use)
 	})
 
 	-- lazygit
-	-- nvim v0.7.2
 	use({
 		"kdheepak/lazygit.nvim",
-		-- optional for floating window border decoration
 		requires = {
 			"nvim-lua/plenary.nvim",
 		},
 	})
 
-  -- nvim-dap
-  use("mfussenegger/nvim-dap")
-  use("leoluz/nvim-dap-go")
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+	-- nvim-dap
+	use("mfussenegger/nvim-dap")
+	use("leoluz/nvim-dap-go")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } })
 
-  -- load time
-  use('dstein64/vim-startuptime')
+	-- load time
+	use("dstein64/vim-startuptime")
 
-  -- -- fzf
-  -- use { "ibhagwan/fzf-lua",
-  -- -- optional for icon support
-  -- requires = { "nvim-tree/nvim-web-devicons" }
-  -- }
-
-	-- all below came from the docs
+	------------------------------------------------------------------------------------------
+	-- all below came from the docs: https://github.com/wbthomason/packer.nvim
+	------------------------------------------------------------------------------------------
 	if packer_bootstrap then
 		require("packer").sync()
 	end
