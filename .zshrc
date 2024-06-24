@@ -111,3 +111,4 @@ alias vim="nvim"
 alias config="nvim ~/.config/"
 alias startday="sh ~/.config/scripts/startday.sh"
 alias notes="nvim ~/personal/notes/"
+kn() { kubectl config set-context --current --namespace="$1" }

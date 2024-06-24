@@ -19,3 +19,7 @@ if [ -r ~/.config/.zshrc ]; then
     source ~/.config/.zshrc
 fi
 ```
+
+## Sources
+
+- https://neovim.io/doc/user/lua-guide.html#lua-guide

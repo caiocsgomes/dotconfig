@@ -62,6 +62,7 @@ return packer.startup(function(use)
 			ts_update()
 		end,
 	})
+
 	-- autocompletion
 	use({
 		"hrsh7th/nvim-cmp",
@@ -123,7 +124,21 @@ return packer.startup(function(use)
   -- nvim-dap
   use("mfussenegger/nvim-dap")
   use("leoluz/nvim-dap-go")
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+
+  -- load time
+  use('dstein64/vim-startuptime')
+
+  -- -- fzf
+  -- use { "ibhagwan/fzf-lua",
+  -- -- optional for icon support
+  -- requires = { "nvim-tree/nvim-web-devicons" }
+  -- }
+
+
+
+
+
 	-- all below came from the docs
 	if packer_bootstrap then
 		require("packer").sync()

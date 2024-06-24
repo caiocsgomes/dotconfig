@@ -9,14 +9,14 @@ end
 registry.refresh(function()
 	registry.get_package(
 		"lua-language-server",
-		"ansible-language-server",
-		"bash-language-server",
+		-- "ansible-language-server",
+		-- "bash-language-server",
 		"dockerfile-language-server",
 		"docker-compose-language-service",
 		"gopls",
-		"json-lsp",
-		"marksman",
-		"jedi-language-server",
+		-- "json-lsp",
+		-- "marksman",
+		-- "jedi-language-server",
 		"terraform-ls"
 	)
 end)
@@ -26,14 +26,14 @@ end)
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
-		"ansiblels",
-		"bashls",
+		-- "ansiblels",
+		-- "bashls",
 		"dockerls",
 		"docker_compose_language_service",
 		"gopls",
-		"jsonls",
-		"marksman",
-		"jedi_language_server",
+		-- "jsonls",
+		-- "marksman",
+		-- "jedi_language_server",
 		"terraformls",
 	},
 })
@@ -79,13 +79,13 @@ lspconfig.gopls.setup({
 	},
 })
 lspconfig.dockerls.setup({})
-lspconfig.ansiblels.setup({})
+-- lspconfig.ansiblels.setup({})
 lspconfig.terraformls.setup({})
-lspconfig.jedi_language_server.setup({})
-lspconfig.bashls.setup({})
+-- lspconfig.jedi_language_server.setup({})
+-- lspconfig.bashls.setup({})
 lspconfig.docker_compose_language_service.setup({})
-lspconfig.jsonls.setup({})
-lspconfig.marksman.setup({}) -- Markdown
+-- lspconfig.jsonls.setup({})
+-- lspconfig.marksman.setup({}) -- Markdown
 
 -- Setting up keymaps
 vim.api.nvim_create_autocmd("LspAttach", {
