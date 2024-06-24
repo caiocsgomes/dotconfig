@@ -135,10 +135,6 @@ return packer.startup(function(use)
   -- requires = { "nvim-tree/nvim-web-devicons" }
   -- }
 
-
-
-
-
 	-- all below came from the docs
 	if packer_bootstrap then
 		require("packer").sync()

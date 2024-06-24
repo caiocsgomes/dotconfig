@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
-                         --keymap.set("MODE", "KEYS", "ACTION")
+--keymap.set("MODE", "KEYS", "ACTION")
 
 --general
 keymap.set("i", "jk", "<ESC>", { desc = "ESC to enter normal mode" })
@@ -57,27 +57,15 @@ keymap.set(
 	{ "n", "v", "x" },
 	"<leader>d",
 	'"1p',
-	{ noremap = true, silent = true, desc = "Paste from delete register" }
+	{ noremap = true, silent = true, desc = "Paste from delete or change register" }
 )
 
--- keymap.set(
--- 	"i",
--- 	"<C-p>",
--- 	"<C-r>+",
--- 	{ noremap = true, silent = true, desc = "Paste from clipboard from within insert mode" }
--- )
--- keymap.set(
--- 	"x",
--- 	"<leader>P",
--- 	'"_dP',
--- 	{ noremap = true, silent = true, desc = "Paste over selection without erasing unnamed register" }
--- )
-
 -- nvim dap
--- vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
--- vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" })
--- keymap.set("n", "<F5>", require("dap").continue)
--- keymap.set("n", "<F10>", require("dap").step_over)
--- keymap.set("n", "<F11>", require("dap").step_into)
--- keymap.set("n", "<F12>", require("dap").step_out)
--- keymap.set("n", "<leader>b", require("dap").toggle_breakpoint)
+keymap.set("n", "<leader>d", "<cmd>lua require('dapui').toggle()<cr>", { desc = "toggle dap ui" })
+vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" })
+keymap.set("n", "<F5>", require("dap").continue)
+keymap.set("n", "<F10>", require("dap").step_over)
+keymap.set("n", "<F11>", require("dap").step_into)
+keymap.set("n", "<F12>", require("dap").step_out)
+keymap.set("n", "<leader>b", require("dap").toggle_breakpoint)
