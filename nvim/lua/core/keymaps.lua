@@ -62,8 +62,8 @@ keymap.set(
 
 -- nvim dap
 keymap.set("n", "<leader>d", "<cmd>lua require('dapui').toggle()<cr>", { desc = "toggle dap ui" })
-vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
-vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" })
+-- vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" }) -- Default looks better
+-- vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" }) -- Default looks better
 keymap.set("n", "<F5>", require("dap").continue)
 keymap.set("n", "<F10>", require("dap").step_over)
 keymap.set("n", "<F11>", require("dap").step_into)
