@@ -105,10 +105,18 @@ source $ZSH/oh-my-zsh.sh
 alias homelab="cd ~/personal/homelab"
 alias cdpersonal="cd ~/personal"
 alias cdcode="cd ~/code"
-alias k="kubectl"
 alias vim="nvim"
-alias n="nvim"
+alias n="nvim ."
 alias config="nvim ~/.config/"
 alias startday="sh ~/.config/scripts/startday.sh"
 alias notes="nvim ~/personal/notes/"
+## Kubernetes
+alias k="kubectl"
 kn() { kubectl config set-context --current --namespace="$1" }
+kv() { kubectl get pod "$1" -o yaml | nvim }
+## Terraform
+alias tf="terraform"
+## AWS
+set-aws-credentials() {
+  source ~/.config/.aws-credentials.sh
+}

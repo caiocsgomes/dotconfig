@@ -33,7 +33,7 @@ opt.signcolumn = "yes"
 opt.backspace = "indent,eol,start"
 
 -- clipboard -> this will make copy and paste to use the clipboard
-opt.clipboard:append("unnamedplus")
+-- opt.clipboard:append("unnamed")
 
 -- split windows -> this will give directions for when splitting the window
 opt.splitright = true

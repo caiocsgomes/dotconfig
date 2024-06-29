@@ -2,3 +2,4 @@ nvim/pack
 nvim/plugin
 github-copilot/*
 2024*
+.aws-credentials.sh

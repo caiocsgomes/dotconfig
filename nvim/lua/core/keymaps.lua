@@ -11,9 +11,9 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "disable highlight" })
 keymap.set("n", "<leader>+", "<C-a>", { desc = "increase number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "decrease number" })
 keymap.set("n", "<Tab>", "<C-w>w", { desc = "switch between windows" })
-keymap.set("n", "<leader>w", ":w<CR>", { desc = "write file" })
+keymap.set("n", "<leader>ww", ":w<CR>", { desc = "write file" })
 keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "write and quit" })
-keymap.set("n", "<leader>q", ":q!<CR>", { desc = "quit without saving" })
+keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "quit without saving" })
 
 -- nvim filetree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "toggle filetree" })
@@ -41,13 +41,13 @@ keymap.set("n", "<leader>=", [[<cmd>vertical resize +5<cr>]]) -- make the window
 keymap.set("n", "<leader>-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
 
 -- format on command
-keymap.set("n", "<leader>c", "<cmd>Format<cr>")
+keymap.set("n", "<leader>cc", "<cmd>Format<cr>")
 
 -- todo comments
-keymap.set("n", "<leader>t", "<cmd>TodoTelescope<cr>")
+keymap.set("n", "<leader>tt", "<cmd>TodoTelescope<cr>")
 
 -- lazy git
-keymap.set("n", "<leader>g", "<cmd>LazyGit<cr>")
+keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
 
 -- registers
 keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
