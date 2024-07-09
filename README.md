@@ -42,3 +42,9 @@ fi
 ## Sources
 
 - https://neovim.io/doc/user/lua-guide.html#lua-guide
+
+
+## Troubleshooting
+
+:checkhealth
+:messages
