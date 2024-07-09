@@ -5,7 +5,7 @@ return {
   keys = {
     {
       -- Customize or remove this keymap to your liking
-      "<leader>f",
+      "<leader>c",
       function()
         require("conform").format({ async = true, lsp_format = "fallback" })
       end,
@@ -20,6 +20,7 @@ return {
       lua = { "stylua" },
       python = { "isort", "black" },
       javascript = { { "prettierd", "prettier" } },
+      go = { "gofmt", "goimports", "gofumpt" },
     },
     -- Set up format-on-save
     format_on_save = { timeout_ms = 500, lsp_format = "fallback" },
