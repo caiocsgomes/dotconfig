@@ -120,3 +120,10 @@ alias tf="terraform"
 set-aws-credentials() {
   source ~/.config/.aws-credentials.sh
 }
+## Go
+export GOPATH=$HOME/go 
+export GOROOT=/usr/local/go 
+export GOBIN=$GOPATH/bin 
+export PATH=$PATH:$GOPATH 
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
