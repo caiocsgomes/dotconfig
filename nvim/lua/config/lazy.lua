@@ -1,5 +1,6 @@
 -- This is all from the docs: https://lazy.folke.io/installation
 -- Bootstrap lazy.nvim
+-- Troubleshoot: :checkhealth lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
