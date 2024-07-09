@@ -25,10 +25,21 @@ return {
 	{
 		-- Troubleshooting: LspInfo
 		"neovim/nvim-lspconfig",
+    lazy = false,
 		dependencies = {
 			"mason.nvim",
 			{ "williamboman/mason-lspconfig.nvim", config = function() end },
+
+			{ "ms-jpq/coq_nvim", branch = "coq" },
+			{ "ms-jpq/coq.artifacts", branch = "artifacts" },
+			{ "ms-jpq/coq.thirdparty", branch = "3p" },
 		},
+		init = function()
+			vim.g.coq_settings = {
+				auto_start = true, -- if you want to start COQ at startup
+				-- Your COQ settings here
+			}
+		end,
 		config = function()
 			local lspconfig = require("lspconfig")
 			local lsp_defaults = lspconfig.util.default_config
