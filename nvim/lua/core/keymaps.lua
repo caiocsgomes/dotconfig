@@ -51,6 +51,7 @@ keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
 
 -- fugitive -- https://github.com/tpope/vim-fugitive
 keymap.set("n", "<leader>gd", "<cmd>Gvdiffsplit<cr>")
+keymap.set("n", "<leader>gr", "<cmd>Gread<cr>")
 keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>")
 keymap.set("n", "<leader>gv", "<cmd>GBrowse<cr>")
 

@@ -81,7 +81,7 @@ return {
 						elseif vim.fn.executable(cwd .. "/.venv/bin/python") == 1 then
 							return cwd .. "/.venv/bin/python"
 						else
-							return "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python"
+							print("You need to create a virtual environment called venv or .venv")
 						end
 					end,
 				},
