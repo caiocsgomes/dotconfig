@@ -44,10 +44,16 @@ keymap.set("n", "<leader>-", [[<cmd>vertical resize -5<cr>]]) -- make the window
 keymap.set("n", "<leader>c", "<cmd>Format<cr>")
 
 -- todo comments
-keymap.set("n", "<leader>t", "<cmd>TodoTelescope<cr>")
+keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
 
 -- lazy git
 keymap.set("n", "<leader>g", "<cmd>LazyGit<cr>")
+
+-- fugitive -- https://github.com/tpope/vim-fugitive
+keymap.set("n", "<leader>gd", "<cmd>Gvdiffsplit<cr>")
+keymap.set("n", "<leader>gr", "<cmd>Gread<cr>")
+keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>")
+keymap.set("n", "<leader>gv", "<cmd>GBrowse<cr>")
 
 -- registers
 keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
@@ -61,11 +67,11 @@ keymap.set(
 )
 
 -- nvim dap
-keymap.set("n", "<leader>d", "<cmd>lua require('dapui').toggle()<cr>", { desc = "toggle dap ui" })
+--keymap.set("n", "<leader>d", "<cmd>lua require('dapui').toggle()<cr>", { desc = "toggle dap ui" })
 -- vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" }) -- Default looks better
 -- vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" }) -- Default looks better
-keymap.set("n", "<F5>", require("dap").continue)
-keymap.set("n", "<F10>", require("dap").step_over)
-keymap.set("n", "<F11>", require("dap").step_into)
-keymap.set("n", "<F12>", require("dap").step_out)
-keymap.set("n", "<leader>b", require("dap").toggle_breakpoint)
+--keymap.set("n", "<F5>", require("dap").continue)
+--keymap.set("n", "<F10>", require("dap").step_over)
+--keymap.set("n", "<F11>", require("dap").step_into)
+--keymap.set("n", "<F12>", require("dap").step_out)
+--keymap.set("n", "<leader>b", require("dap").toggle_breakpoint)

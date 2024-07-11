@@ -4,8 +4,15 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 local act = wezterm.action
+
 -- For example, changing the color scheme:
-config.color_scheme = "GruvboxDarkHard"
+-- config.color_scheme = "GruvboxDarkHard"
+-- config.color_scheme = "Batman"
+config.color_scheme = "Fira Code"
+config.font = wezterm.font_with_fallback({
+	"GruvboxDarkHard",
+})
+config.font_size = 14
 
 config.keys = {
 	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
@@ -20,5 +27,8 @@ config.keys = {
 	{ key = "UpArrow", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Up") },
 	{ key = "DownArrow", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Down") },
 }
+
+config.font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = false })
+
 -- and finally, return the configuration to wezterm
 return config
