@@ -15,24 +15,24 @@ return {
 
   -- stylua: ignore
   keys = {
-    -- { "<leader>d", "", desc = "+debug", mode = {"n", "v"} },
-    { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
-    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
     { "<F5>", function() require("dap").continue() end, desc = "Continue" },
-    { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = "Run with Args" },
-    { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
+    { "<F8>", function() require("dap").step_into() end, desc = "Step Into" },
+    { "<F9>", function() require("dap").step_over() end, desc = "Step Over" },
+    { "<F7>", function() require("dap").step_out() end, desc = "Step Out" },
+    { "<leader>db", function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint" },
+    { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
     { "<leader>dg", function() require("dap").goto_() end, desc = "Go to Line (No Execute)" },
-    { "<leader>di", function() require("dap").step_into() end, desc = "Step Into" },
     { "<leader>dj", function() require("dap").down() end, desc = "Down" },
     { "<leader>dk", function() require("dap").up() end, desc = "Up" },
     { "<leader>dl", function() require("dap").run_last() end, desc = "Run Last" },
-    { "<leader>do", function() require("dap").step_out() end, desc = "Step Out" },
-    { "<leader>dO", function() require("dap").step_over() end, desc = "Step Over" },
-    { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
-    { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
-    { "<leader>ds", function() require("dap").session() end, desc = "Session" },
-    { "<leader>dt", function() require("dap").terminate() end, desc = "Terminate" },
-    { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
+    -- { "<leader>d", "", desc = "+debug", mode = {"n", "v"} },
+    -- { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
+    -- { "<leader>da", function() require("dap").continue({ before = get_args }) end, desc = "Run with Args" },
+    -- { "<leader>dC", function() require("dap").run_to_cursor() end, desc = "Run to Cursor" },
+    -- { "<leader>dp", function() require("dap").pause() end, desc = "Pause" },
+    -- { "<leader>dr", function() require("dap").repl.toggle() end, desc = "Toggle REPL" },
+    -- { "<leader>ds", function() require("dap").session() end, desc = "Session" },
+    -- { "<leader>dw", function() require("dap.ui.widgets").hover() end, desc = "Widgets" },
   },
 		config = function()
 			local dap = require("dap")
@@ -86,11 +86,45 @@ return {
 					end,
 				},
 			}
+			dap.adapters.delve = {
+				type = "server",
+				port = "${port}",
+				executable = {
+					command = "dlv",
+					args = { "dap", "-l", "127.0.0.1:${port}" },
+					-- add this if on windows, otherwise server won't open successfully
+					-- detached = false
+				},
+			}
+			-- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
+			dap.configurations.go = {
+				{
+					type = "delve",
+					name = "Debug",
+					request = "launch",
+					program = "${file}",
+				},
+				{
+					type = "delve",
+					name = "Debug test", -- configuration for debugging test files
+					request = "launch",
+					mode = "test",
+					program = "${file}",
+				},
+				-- works with go.mod packages and sub packages
+				{
+					type = "delve",
+					name = "Debug test (go.mod)",
+					request = "launch",
+					mode = "test",
+					program = "./${relativeFileDirname}",
+				},
+			}
 		end,
 	},
-	{
-		"mfussenegger/nvim-dap-python",
-	},
+	-- {
+	-- 	"mfussenegger/nvim-dap-python",
+	-- },
 	{
 		"rcarriga/nvim-dap-ui",
 		dependencies = { "nvim-neotest/nvim-nio" },

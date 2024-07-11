@@ -2,17 +2,21 @@ return {
 	{
 		-- Plugin to manage the LSP through mason
 		"williamboman/mason-lspconfig.nvim",
-		opts = {
-			ensure_installed = {
-				"bashls",
-				"dockerls",
-				"gopls",
-				"pyright",
-				"vimls",
-				"yamlls",
-				"terraformls",
-			},
-		},
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = {
+					-- https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+					"bashls",
+					"dockerls",
+					"gopls",
+					"pyright",
+					"vimls",
+					"hydra-lsp",
+					"yamlls",
+					"terraformls",
+				},
+			})
+		end,
 	},
 	{
 		-- Troubleshooting: LspInfo, LspLog
@@ -33,6 +37,7 @@ return {
 			}
 		end,
 		config = function()
+			-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 			local lspconfig = require("lspconfig")
 			local lsp_defaults = lspconfig.util.default_config
 			lspconfig.bashls.setup({})

@@ -48,3 +48,9 @@ fi
 
 :checkhealth
 :messages
+
+## Todo
+
+- Fix python dap
+- Add golang dap
+- Switch from nvim-cmp

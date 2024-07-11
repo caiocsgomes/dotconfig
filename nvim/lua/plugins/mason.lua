@@ -1,15 +1,16 @@
 return {
-	{
-		-- Plugin to bridge between external LSP and neovim
-		"williamboman/mason.nvim",
-		opts = {
+	"williamboman/mason.nvim",
+	config = function()
+		require("mason").setup({
 			ensure_installed = {
-				"debugpy",
-				"delve",
+				-- https://mason-registry.dev/registry/list
+				-- :MasonInstall <toolname> -- In case :Mason shows a missing lsp, dap, etc
 				"black",
+				"delve",
+				"debugpy",
 				"isort",
 				"stylua",
 			},
-		},
-	},
+		})
+	end,
 }
