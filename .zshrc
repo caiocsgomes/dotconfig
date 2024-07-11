@@ -127,3 +127,5 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH 
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+## Wezterm
+wtt() {wezterm cli set-tab-title "$1"}

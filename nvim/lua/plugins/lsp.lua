@@ -1,9 +1,5 @@
 return {
 	{
-		-- Plugin to bridge between external LSP and neovim
-		"williamboman/mason.nvim",
-	},
-	{
 		-- Plugin to manage the LSP through mason
 		"williamboman/mason-lspconfig.nvim",
 		opts = {
@@ -96,6 +92,7 @@ return {
 					gofumpt = true,
 				},
 			})
+			lspconfig.pyright.setup({})
 		end,
 	},
 }
