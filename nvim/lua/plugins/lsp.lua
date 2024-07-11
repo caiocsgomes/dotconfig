@@ -5,18 +5,9 @@ return {
 		opts = {
 			ensure_installed = {
 				"bashls",
-				"cssls",
 				"dockerls",
-				"delve",
 				"gopls",
-				"goimports",
-				"gofumpt",
-				"gomodifytags",
-				"impl",
-				"html",
-				"jsonls",
 				"pyright",
-				"tsserver",
 				"vimls",
 				"yamlls",
 				"terraformls",
@@ -44,7 +35,13 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
 			local lsp_defaults = lspconfig.util.default_config
+			lspconfig.bashls.setup({})
+			lspconfig.dockerls.setup({})
 			lspconfig.lua_ls.setup({})
+			lspconfig.pyright.setup({})
+			lspconfig.vimls.setup({})
+			lspconfig.yamlls.setup({})
+			lspconfig.terraformls.setup({})
 			lspconfig.gopls.setup({
 				cmd = { "gopls", "serve" },
 				root_dir = lspconfig.util.root_pattern("go.mod", "go.work", ".git"),
@@ -92,7 +89,6 @@ return {
 					gofumpt = true,
 				},
 			})
-			lspconfig.pyright.setup({})
 		end,
 	},
 }
