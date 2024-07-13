@@ -131,3 +131,5 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 ## Wezterm
 wtt() {wezterm cli set-tab-title "$1"}
+## Variables
+export LG_CONFIG_FILE=~/.config/nvim/lua/config/lazygit/config.yaml
