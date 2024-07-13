@@ -24,6 +24,7 @@ return {
 			snippet = {
 				expand = function(args)
 					require("luasnip").lsp_expand(args.body)
+					require("luasnip.loaders.from_lua").load({ paths = "~/.snippets" })
 				end,
 			},
 			sources = cmp.config.sources({

@@ -11,7 +11,6 @@ return {
 					"gopls",
 					"pyright",
 					"vimls",
-					"hydra-lsp",
 					"yamlls",
 					"terraformls",
 				},
@@ -22,20 +21,20 @@ return {
 		-- Troubleshooting: LspInfo, LspLog
 		"neovim/nvim-lspconfig",
 		lazy = false,
-		dependencies = {
-			"mason.nvim",
-			{ "williamboman/mason-lspconfig.nvim", config = function() end },
-
-			{ "ms-jpq/coq_nvim", branch = "coq" },
-			{ "ms-jpq/coq.artifacts", branch = "artifacts" },
-			{ "ms-jpq/coq.thirdparty", branch = "3p" },
-		},
-		init = function()
-			vim.g.coq_settings = {
-				auto_start = false, -- if you want to start COQ at startup
-				-- Your COQ settings here
-			}
-		end,
+		-- dependencies = {
+		-- 	"mason.nvim",
+		-- 	{ "williamboman/mason-lspconfig.nvim", config = function() end },
+		--
+		-- 	{ "ms-jpq/coq_nvim", branch = "coq" },
+		-- 	{ "ms-jpq/coq.artifacts", branch = "artifacts" },
+		-- 	{ "ms-jpq/coq.thirdparty", branch = "3p" },
+		-- },
+		-- init = function()
+		-- 	vim.g.coq_settings = {
+		-- 		auto_start = false, -- if you want to start COQ at startup
+		-- 		-- Your COQ settings here
+		-- 	}
+		-- end,
 		config = function()
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 			local lspconfig = require("lspconfig")
