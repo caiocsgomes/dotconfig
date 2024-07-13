@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 alias homelab="cd ~/personal/homelab"
 alias cdpersonal="cd ~/personal"
 alias cdcode="cd ~/code"
+alias cdconfig="cd ~/.config"
 alias vim="nvim"
 alias n="nvim ."
 alias config="nvim ~/.config/"

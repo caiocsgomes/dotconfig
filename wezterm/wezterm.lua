@@ -9,17 +9,17 @@ local act = wezterm.action
 -- config.color_scheme = "GruvboxDarkHard"
 -- config.color_scheme = "Batman"
 config.color_scheme = "Fira Code"
-config.font = wezterm.font_with_fallback({
-	"GruvboxDarkHard",
-})
+-- config.font = wezterm.font_with_fallback({
+-- 	"GruvboxDarkHard",
+-- })
 config.font_size = 14
 
 config.keys = {
 	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
 	{ key = "LeftArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
 	{ key = "RightArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bf" }) },
-	{ key = "LeftArrow", mods = "CMD|OPT", action = wezterm.action({ ActivateTabRelative = -1 }) },
-	{ key = "RightArrow", mods = "CMD|OPT", action = wezterm.action({ ActivateTabRelative = 1 }) },
+	{ key = "LeftArrow", mods = "CMD", action = wezterm.action({ ActivateTabRelative = -1 }) },
+	{ key = "RightArrow", mods = "CMD", action = wezterm.action({ ActivateTabRelative = 1 }) },
 	{ key = "d", mods = "CMD", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ key = "r", mods = "CMD", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "LeftArrow", mods = "CTRL|SHIFT", action = act.ActivatePaneDirection("Left") },

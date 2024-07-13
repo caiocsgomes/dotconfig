@@ -47,7 +47,7 @@ keymap.set("n", "<leader>c", "<cmd>Format<cr>")
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
 
 -- lazy git
-keymap.set("n", "<leader>g", "<cmd>LazyGit<cr>")
+keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
 
 -- fugitive -- https://github.com/tpope/vim-fugitive
 keymap.set("n", "<leader>gd", "<cmd>Gvdiffsplit<cr>")
