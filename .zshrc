@@ -107,15 +107,17 @@ alias cdpersonal="cd ~/personal"
 alias cdcode="cd ~/code"
 alias cdconfig="cd ~/.config"
 alias vim="nvim"
-alias n="nvim ."
-alias config="nvim ~/.config/"
+alias n="nvim"
+alias config="cd ~/.config/ && nvim"
 alias startday="sh ~/.config/scripts/startday.sh"
-alias notes="nvim ~/personal/notes/"
+alias notes="cd ~/.config/notes && nvim"
 alias downloads="cd ~/Downloads"
+
 ## Kubernetes
 alias k="kubectl"
 kn() { kubectl config set-context --current --namespace="$1" }
 kv() { kubectl get pod "$1" -o yaml | nvim }
+
 ## Terraform
 alias tf="terraform"
 ## AWS
@@ -129,7 +131,9 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH 
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
 ## Wezterm
 wtt() {wezterm cli set-tab-title "$1"}
 ## Variables
+#
 export LG_CONFIG_FILE=~/.config/nvim/lua/config/lazygit/config.yaml

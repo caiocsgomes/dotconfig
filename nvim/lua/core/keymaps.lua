@@ -1,18 +1,14 @@
 vim.g.mapleader = " "
-
 local keymap = vim.keymap
-
---keymap.set("MODE", "KEYS", "ACTION")
 
 --general
 keymap.set("i", "jk", "<ESC>", { desc = "ESC to enter normal mode" })
 keymap.set("n", "<leader>o", "o<ESC>k", { desc = "insert line below" })
-keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "disable highlight" })
+keymap.set("n", "<leader>rh", ":nohl<CR>", { desc = "disable highlight" })
 keymap.set("n", "<leader>+", "<C-a>", { desc = "increase number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "decrease number" })
 keymap.set("n", "<Tab>", "<C-w>w", { desc = "switch between windows" })
 keymap.set("n", "<leader>w", ":w<CR>", { desc = "write file" })
-keymap.set("n", "<leader>wq", ":wq<CR>", { desc = "write and quit" })
 keymap.set("n", "<leader>q", ":q!<CR>", { desc = "quit without saving" })
 
 -- nvim filetree
@@ -53,7 +49,7 @@ keymap.set("n", "<leader>gg", "<cmd>LazyGit<cr>")
 keymap.set("n", "<leader>gd", "<cmd>Gvdiffsplit<cr>")
 keymap.set("n", "<leader>gr", "<cmd>Gread<cr>")
 keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>")
-keymap.set("n", "<leader>gv", "<cmd>GBrowse<cr>")
+-- keymap.set("n", "<leader>gv", "<cmd>GBrowse<cr>")
 
 -- registers
 keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
@@ -64,6 +60,14 @@ keymap.set(
 	"<leader>d",
 	'"1p',
 	{ noremap = true, silent = true, desc = "Paste from delete or change register" }
+)
+
+-- Telekasken
+keymap.set(
+	{ "n" },
+	"<leader>n",
+	"<cmd>Telekasten find_notes<cr>",
+	{ noremap = true, silent = true, desc = "Open Telekasken" }
 )
 
 -- nvim dap

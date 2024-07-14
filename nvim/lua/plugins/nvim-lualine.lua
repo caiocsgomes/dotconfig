@@ -2,12 +2,12 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-    -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md#codedark
+    -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
 		-- local custom_gruvbox = require("lualine.themes.gruvbox")
-		local codedark = require("lualine.themes.iceberg_dark")
+		local lualine_theme = require("lualine.themes.ayu_dark")
 
 		require("lualine").setup({
-			options = { theme = codedark, disabled_filetypes = { "packer", "NvimTree" } },
+			options = { theme = lualine_theme, disabled_filetypes = { "packer", "NvimTree" } },
 			sections = {
 				lualine_c = {
 					{

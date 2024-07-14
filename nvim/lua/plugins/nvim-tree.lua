@@ -24,6 +24,8 @@ return {
 			view = {
 				width = "20%",
 				relativenumber = true,
+				side = "right",
+				signcolumn = "no",
 			},
 			renderer = {
 				group_empty = true,

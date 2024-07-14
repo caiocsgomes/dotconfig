@@ -10,7 +10,6 @@ return {
 					"dockerls",
 					"gopls",
 					"pyright",
-					"vimls",
 					"yamlls",
 					"terraformls",
 				},
@@ -35,10 +34,16 @@ return {
 		-- 		-- Your COQ settings here
 		-- 	}
 		-- end,
-		config = function()
+		opts = {
+			inlay_hints = { enabled = true },
+		},
+
+		config = function(opts)
 			-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 			local lspconfig = require("lspconfig")
 			local lsp_defaults = lspconfig.util.default_config
+			-- lsp config
+			-- vim.lsp.inlay_hint.enable()
 			lspconfig.bashls.setup({})
 			lspconfig.dockerls.setup({})
 			lspconfig.lua_ls.setup({})
