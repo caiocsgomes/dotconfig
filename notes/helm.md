@@ -31,6 +31,11 @@ helm repo update repo-name
 helm template chart-name(any name) chart-path(can be . if in the same directory)
 ```
 
+## Template chart in repo
+```bash
+helm template repo/chart-name --version 2024.1.6 --debug -f values.yaml
+```
+
 ## Template specifig version
 ```bash
 helm template chart-repo/chart-name --version 1.0.0

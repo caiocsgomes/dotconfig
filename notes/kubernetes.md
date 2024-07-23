@@ -82,3 +82,8 @@ kubectl run test-nslookup --image=busybox:1.28 --rm -it --restart=Never -- nsloo
 # The 4 is memory column number
 kubectl top nodes --no-headers | awk '{if(NR>0) gsub(/Mi/,""); print $4}' | paste -sd+ - | bc
 ```
+
+## Delete all pods in a specific state
+```sh
+kubectl get pod -n <namespace> | grep Error | awk '{print $1}' | xargs kubectl delete pod -n <namespace>
+```

@@ -11,3 +11,8 @@ k -n NAMESPACE get ephemeralrunnersets.actions.github.com
 ```bash
 k -n gha-runner-scale-set get AutoScalingRunnerSet
 ```
+
+## Login with gh cli
+```bash
+gh auth login # use https and login in the browser, it's easier
+```

@@ -104,21 +104,21 @@ return {
 					request = "launch",
 					program = "${file}",
 				},
-				{
-					type = "delve",
-					name = "Debug test", -- configuration for debugging test files
-					request = "launch",
-					mode = "test",
-					program = "${file}",
-				},
-				-- works with go.mod packages and sub packages
-				{
-					type = "delve",
-					name = "Debug test (go.mod)",
-					request = "launch",
-					mode = "test",
-					program = "./${relativeFileDirname}",
-				},
+				-- {
+				-- 	type = "delve",
+				-- 	name = "Debug test", -- configuration for debugging test files
+				-- 	request = "launch",
+				-- 	mode = "test",
+				-- 	program = "${file}",
+				-- },
+				-- -- works with go.mod packages and sub packages
+				-- {
+				-- 	type = "delve",
+				-- 	name = "Debug test (go.mod)",
+				-- 	request = "launch",
+				-- 	mode = "test",
+				-- 	program = "./${relativeFileDirname}",
+				-- },
 			}
 		end,
 	},
@@ -130,7 +130,7 @@ return {
 		dependencies = { "nvim-neotest/nvim-nio" },
   -- stylua: ignore
   keys = {
-    { "<leader>d", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
+    { "<leader>du", function() require("dapui").toggle({ }) end, desc = "Dap UI" },
     -- { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
   },
 		opts = {},
@@ -142,11 +142,14 @@ return {
 				dapui.open({})
 			end
 			-- dap.listeners.before.event_terminated["dapui_config"] = function()
-			-- 	dapui.close({})
+			-- 	-- dapui.close({})
+			--      -- dap.clear_breakpoints()
 			-- end
 			-- dap.listeners.before.event_exited["dapui_config"] = function()
 			-- 	dapui.close({})
 			-- end
+			vim.fn.sign_define("DapBreakpoint", { text = "", texthl = "", linehl = "", numhl = "" }) -- Default looks better
+			vim.fn.sign_define("DapStopped", { text = "", texthl = "", linehl = "", numhl = "" }) -- Default looks better
 		end,
 	},
 }

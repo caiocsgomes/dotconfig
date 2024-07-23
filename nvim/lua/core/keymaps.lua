@@ -36,9 +36,6 @@ keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>")
 keymap.set("n", "<leader>=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
 keymap.set("n", "<leader>-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
 
--- format on command
-keymap.set("n", "<leader>c", "<cmd>Format<cr>")
-
 -- todo comments
 keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
 
@@ -52,15 +49,10 @@ keymap.set("n", "<leader>gb", "<cmd>Git blame<cr>")
 -- keymap.set("n", "<leader>gv", "<cmd>GBrowse<cr>")
 
 -- registers
-keymap.set({ "n", "v", "x" }, "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
+keymap.set({ "n", "v", "x" }, "<leader>p", '"+', { noremap = true, silent = true, desc = "Paste clipboard" })
+keymap.set({ "n", "v", "x" }, "<leader>y", '"0p', { noremap = true, silent = true, desc = "Paste yank register" })
+keymap.set({ "n", "v", "x" }, "<leader>d", '"1p', { noremap = true, silent = true, desc = "Paste delete register" })
 keymap.set({ "n", "v", "x" }, "<C-a>", "gg0vG$", { noremap = true, silent = true, desc = "Select all" })
-keymap.set({ "n", "v", "x" }, "<leader>y", '"0p', { noremap = true, silent = true, desc = "Paste from yank register" })
-keymap.set(
-	{ "n", "v", "x" },
-	"<leader>d",
-	'"1p',
-	{ noremap = true, silent = true, desc = "Paste from delete or change register" }
-)
 
 -- Telekasken
 keymap.set(

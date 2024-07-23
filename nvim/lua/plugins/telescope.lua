@@ -15,6 +15,16 @@ return {
 						["q"] = require("telescope.actions").close,
 					},
 				},
+				vimgrep_arguments = {
+					"rg",
+					"--color=never",
+					"--hidden",
+					"--no-heading",
+					"--with-filename",
+					"--line-number",
+					"--column",
+					"--smart-case",
+				},
 			},
 			pickers = {
 				find_files = { hidden = true },
