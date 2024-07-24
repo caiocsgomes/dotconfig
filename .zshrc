@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-## Caio customization
+## Aliases
 alias homelab="cd ~/personal/homelab"
 alias cdpersonal="cd ~/personal"
 alias cdcode="cd ~/code"
@@ -109,7 +109,7 @@ alias cdconfig="cd ~/.config"
 alias vim="nvim"
 alias n="nvim"
 alias nn='wtt $(basename "$PWD") && nvim'
-alias config="cd ~/.config/ && nvim"
+alias config="wtt 'config' && cd ~/.config/ && nvim"
 alias startday="sh ~/.config/scripts/startday.sh"
 alias notes="cd ~/.config/notes && nvim"
 alias downloads="cd ~/Downloads"
@@ -121,10 +121,12 @@ kv() { kubectl get pod "$1" -o yaml | nvim }
 
 ## Terraform
 alias tf="terraform"
+
 ## AWS
 set-aws-credentials() {
   source ~/.config/.aws-credentials.sh
 }
+
 ## Go
 export GOPATH=$HOME/go 
 export GOROOT=/usr/local/go 
@@ -135,6 +137,7 @@ export PATH=$PATH:$GOROOT/bin
 
 ## Wezterm
 wtt() {wezterm cli set-tab-title "$1"}
+
 ## Variables
-#
 export LG_CONFIG_FILE=~/.config/nvim/lua/config/lazygit/config.yaml
+
