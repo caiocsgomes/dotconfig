@@ -16,3 +16,8 @@ k -n gha-runner-scale-set get AutoScalingRunnerSet
 ```bash
 gh auth login # use https and login in the browser, it's easier
 ```
+
+## List repos with gh cli disabling interactive shell
+```bash
+GH_PAGER=cat gh repo list
+```

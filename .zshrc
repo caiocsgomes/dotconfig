@@ -72,7 +72,7 @@ ZSH_THEME="simple"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
-
+eval "$(zoxide init zsh)"
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -113,6 +113,7 @@ alias config="wtt 'config' && cd ~/.config/ && nvim"
 alias startday="sh ~/.config/scripts/startday.sh"
 alias notes="cd ~/.config/notes && nvim"
 alias downloads="cd ~/Downloads"
+alias cd="z"
 
 ## Kubernetes
 alias k="kubectl"
@@ -122,9 +123,12 @@ kv() { kubectl get pod "$1" -o yaml | nvim }
 ## Terraform
 alias tf="terraform"
 
-## AWS
+## Credentials
 set-aws-credentials() {
   source ~/.config/.aws-credentials.sh
+}
+set-openai-credentials() {
+  source ~/.config/.openai-credentials.sh
 }
 
 ## Go
@@ -140,4 +144,3 @@ wtt() {wezterm cli set-tab-title "$1"}
 
 ## Variables
 export LG_CONFIG_FILE=~/.config/nvim/lua/config/lazygit/config.yaml
-
