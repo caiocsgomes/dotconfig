@@ -44,3 +44,5 @@ opt.iskeyword:append("-")
 -- Disable swap
 opt.swapfile = false
 
+-- Remove tilde from lines
+vim.opt.fillchars = { eob = " "}

@@ -8,6 +8,7 @@ keymap.set("n", "<leader>rh", ":nohl<CR>", { desc = "disable highlight" })
 keymap.set("n", "<leader>+", "<C-a>", { desc = "increase number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "decrease number" })
 keymap.set("n", "<Tab>", "<C-w>w", { desc = "switch between windows" })
+keymap.set("n", "<C-v>", "<C-w>v", { desc = "open vertical tab" })
 keymap.set("n", "<leader>w", ":w<CR>", { desc = "write file" })
 keymap.set("n", "<leader>q", ":q!<CR>", { desc = "quit without saving" })
 
@@ -16,16 +17,16 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "toggle filetree" }
 
 -- telescope
 keymap.set(
-	"n",
-	"<leader>ff",
-	"<cmd>Telescope find_files<cr>",
-	{ desc = "find files within current working directory, respects .gitignore" }
+  "n",
+  "<leader>ff",
+  "<cmd>Telescope find_files<cr>",
+  { desc = "find files within current working directory, respects .gitignore" }
 )
 keymap.set(
-	"n",
-	"<leader>fs",
-	"<cmd>Telescope live_grep<cr>",
-	{ desc = "search for string in current working directory" }
+  "n",
+  "<leader>fs",
+  "<cmd>Telescope live_grep<cr>",
+  { desc = "search for string in current working directory" }
 )
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "search for string in current folder" })
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "list open buffers" })
@@ -56,11 +57,19 @@ keymap.set({ "n", "v", "x" }, "<C-a>", "gg0vG$", { noremap = true, silent = true
 
 -- Telekasken
 keymap.set(
-	{ "n" },
-	"<leader>n",
-	"<cmd>Telekasten find_notes<cr>",
-	{ noremap = true, silent = true, desc = "Open Telekasken" }
+  { "n" },
+  "<leader>nn",
+  "<cmd>Telekasten find_notes<cr>",
+  { noremap = true, silent = true, desc = "Open Telekasken" }
 )
+
+--mini files
+keymap.set("n", "<leader>mf", "<cmd>lua MiniFiles.open()<cr>")
+
+
+
+
+
 
 -- nvim dap
 --keymap.set("n", "<leader>d", "<cmd>lua require('dapui').toggle()<cr>", { desc = "toggle dap ui" })
