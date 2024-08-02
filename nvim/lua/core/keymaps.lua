@@ -13,7 +13,7 @@ keymap.set("n", "<leader>w", ":w<CR>", { desc = "write file" })
 keymap.set("n", "<leader>q", ":q!<CR>", { desc = "quit without saving" })
 
 -- nvim filetree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "toggle filetree" })
+-- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "toggle filetree" })
 
 -- telescope
 keymap.set(
@@ -64,14 +64,14 @@ keymap.set(
 )
 
 --mini files
-keymap.set("n", "<leader>mf", "<cmd>lua MiniFiles.open()<cr>")
+keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open()<cr>")
 
 
 
 
 
 
--- nvim dap
+  -- nvim dap
 --keymap.set("n", "<leader>d", "<cmd>lua require('dapui').toggle()<cr>", { desc = "toggle dap ui" })
 -- vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" }) -- Default looks better
 -- vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" }) -- Default looks better

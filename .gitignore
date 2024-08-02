@@ -3,5 +3,4 @@ nvim/plugin
 github-copilot/*
 2024*
 yarn/
-.aws-credentials.sh
-.openai-api-credentials.sh
+.credentials.sh

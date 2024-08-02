@@ -124,12 +124,7 @@ kv() { kubectl get pod "$1" -o yaml | nvim }
 alias tf="terraform"
 
 ## Credentials
-set-aws-credentials() {
-  source ~/.config/.aws-credentials.sh
-}
-set-openai-credentials() {
-  source ~/.config/.openai-credentials.sh
-}
+source ~/.config/.credentials.sh
 
 ## Go
 export GOPATH=$HOME/go 
