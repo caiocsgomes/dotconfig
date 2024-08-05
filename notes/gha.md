@@ -21,3 +21,13 @@ gh auth login # use https and login in the browser, it's easier
 ```bash
 GH_PAGER=cat gh repo list
 ```
+
+## Execute workflows
+```bash
+gh workflow run # and select workflow
+```
+
+## Watch run execution
+```bash
+gh run watch <execution id> # after running gh workflow view and getting the id
+```
