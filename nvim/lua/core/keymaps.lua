@@ -9,8 +9,8 @@ keymap.set("n", "<leader>+", "<C-a>", { desc = "increase number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "decrease number" })
 keymap.set("n", "<Tab>", "<C-w>w", { desc = "switch between windows" })
 keymap.set("n", "<C-v>", "<C-w>v", { desc = "open vertical tab" })
-keymap.set("n", "<leader>ww", ":w<CR>", { desc = "write file" })
-keymap.set("n", "<leader>qq", ":q!<CR>", { desc = "quit without saving" })
+keymap.set("n", "<leader>w", ":w<CR>", { desc = "write file" })
+keymap.set("n", "<leader>q", ":q!<CR>", { desc = "quit without saving" })
 
 -- nvim filetree
 -- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "toggle filetree" })
