@@ -18,6 +18,7 @@ return {
 				vimgrep_arguments = {
 					"rg",
 					"--color=never",
+          "--no-ignore-vcs",
 					"--hidden",
 					"--no-heading",
 					"--with-filename",
