@@ -53,7 +53,7 @@ return {
         else
           cb({
             type = "executable",
-            command = "/Library/Frameworks/Python.framework/Versions/3.12/bin/python3",
+            command = "/usr/bin/python3",
             args = { "-m", "debugpy.adapter" },
             options = {
               source_filetype = "python",
@@ -91,9 +91,7 @@ return {
         port = "${port}",
         executable = {
           command = "dlv",
-          args = { "dap", "-l", "127.0.0.1:${port}" },
-          -- add this if on windows, otherwise server won't open successfully
-          -- detached = false
+          args = { "dap", "--headless", "--log=false", "-l", "127.0.0.1:${port}", "2>&1 | grep -v '\\[debug-adapter stdout\\]'" },
         },
       }
       -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
@@ -105,19 +103,19 @@ return {
           program = "./${relativeFileDirname}",
         },
         {
-        	type = "delve",
-        	name = "Debug test", -- configuration for debugging test files
-        	request = "launch",
-        	mode = "test",
-        	program = "${file}",
+          type = "delve",
+          name = "Debug test", -- configuration for debugging test files
+          request = "launch",
+          mode = "test",
+          program = "${file}",
         },
         -- works with go.mod packages and sub packages
         {
-        	type = "delve",
-        	name = "Debug test (go.mod)",
-        	request = "launch",
-        	mode = "test",
-        	program = "./${relativeFileDirname}",
+          type = "delve",
+          name = "Debug test (go.mod)",
+          request = "launch",
+          mode = "test",
+          program = "./${relativeFileDirname}",
         },
       }
     end,

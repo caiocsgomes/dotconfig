@@ -4,7 +4,7 @@ local keymap = vim.keymap
 --general
 keymap.set("i", "jk", "<ESC>", { desc = "ESC to enter normal mode" })
 keymap.set("n", "<leader>o", "o<ESC>k", { desc = "insert line below" })
-keymap.set("n", "<leader>rh", ":nohl<CR>", { desc = "disable highlight" })
+keymap.set("n", "<leader>hh", ":nohl<CR>", { desc = "hide highlight" })
 keymap.set("n", "<leader>+", "<C-a>", { desc = "increase number" })
 keymap.set("n", "<leader>-", "<C-x>", { desc = "decrease number" })
 keymap.set("n", "<Tab>", "<C-w>w", { desc = "switch between windows" })
