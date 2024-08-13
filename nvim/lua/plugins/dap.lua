@@ -131,31 +131,32 @@ return {
       { "<leader>du", function() require("dapui").toggle({}) end, desc = "Dap UI" },
       -- { "<leader>de", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
     },
-    opts = {
-      layouts = {
-        {
-          elements = {
-            { id = "scopes",  size = 0.33 },
-            { id = "watches", size = 0.33 },
-            { id = "repl",    size = 0.34 },
-          },
-          size = 10,
-          position = "bottom", -- Position the windows at the bottom
-        },
-      },
-      controls = {
-        enabled = false, -- Disable the controls element
-      },
-      floating = {
-        max_height = nil,  -- These can be integers or a float between 0 and 1.
-        max_width = nil,   -- Floats will be treated as percentage of your screen.
-        border = "single", -- Border style. Can be "single", "double" or "rounded"
-        mappings = {
-          close = { "q", "<Esc>" },
-        },
-      },
-      windows = { indent = 1 },
-    },
+    opts = {},
+    -- opts = {
+    --   layouts = {
+    --     {
+    --       elements = {
+    --         { id = "scopes",  size = 0.33 },
+    --         { id = "watches", size = 0.33 },
+    --         { id = "repl",    size = 0.34 },
+    --       },
+    --       size = 10,
+    --       position = "bottom", -- Position the windows at the bottom
+    --     },
+    --   },
+    --   controls = {
+    --     enabled = false, -- Disable the controls element
+    --   },
+    --   floating = {
+    --     max_height = nil,  -- These can be integers or a float between 0 and 1.
+    --     max_width = nil,   -- Floats will be treated as percentage of your screen.
+    --     border = "single", -- Border style. Can be "single", "double" or "rounded"
+    --     mappings = {
+    --       close = { "q", "<Esc>" },
+    --     },
+    --   },
+    --   windows = { indent = 1 },
+    -- },
     config = function(_, opts)
       local dap = require("dap")
       local dapui = require("dapui")
