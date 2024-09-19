@@ -3,8 +3,12 @@
 https://github.com/actions/github-script/issues/266
 
 ## Getting amount of current and desired runners
+k -n NAMESPACE get ephemeralrunnersets.actions.github.com # Scaleset ARC
+k -n NAMESPACE get runnerreplicasets.actions.summerwind.dev # Legacy ARC
 
-k -n NAMESPACE get ephemeralrunnersets.actions.github.com
+## Getting amount of runners defined in autoscalers
+k -n NAMESPACE get autoscalingrunnersets.actions.github.com # Scaleset ARC
+k -n NAMESPACE get horizontalrunnerautoscalers.actions.summerwind.dev # Legacy ARC
 
 ## Get auto scaling runner sets
 
