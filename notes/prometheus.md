@@ -11,3 +11,7 @@ Good reads:
 - https://docs.digitalocean.com/products/marketplace/catalog/kubernetes-monitoring-stack/#:~:text=The%20kube%2Dprometheus%2Dstack%20is,from%20the%20kubernetes%2Dmixin%20project.
 - https://github.com/prometheus-operator/prometheus-operator/issues/3119
 - https://github.com/prometheus-operator/prometheus-operator/tree/main/example/user-guides/getting-started
+
+Examples:
+- https://github.com/caiocsgomes/ci-cluster/blob/f249a9e720d8aa7b1e4d611d0a8a2f84737f65bc/kubernetes/prometheus-monitors/gha.yaml#L1
+- https://github.com/caiocsgomes/ci-cluster/blob/f249a9e720d8aa7b1e4d611d0a8a2f84737f65bc/kubernetes/kube-prometheus-stack/values.yaml#L3655

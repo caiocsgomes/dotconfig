@@ -11,9 +11,9 @@ keymap.set("n", "<Tab>", "<C-w>w", { desc = "switch between windows" })
 keymap.set("n", "<C-v>", "<C-w>v", { desc = "open vertical tab" })
 keymap.set("n", "<leader>w", ":w<CR>", { desc = "write file" })
 keymap.set("n", "<leader>q", ":q!<CR>", { desc = "quit without saving" })
-keymap.set("n", "tn", ":tabnew<CR>", { desc = "quit without saving" })
-keymap.set("n", "<C-n>", ":bnext<CR>")
-keymap.set("n", "<leader>cp", ":let @+ = expand('%:p:h')<CR>", { desc = "copy cwd to clipboard"})
+keymap.set("n", "tn", "<cmd>tabnew<CR>", { desc = "quit without saving" })
+keymap.set("n", "<C-n>", "<cmd>bnext<CR>")
+keymap.set("n", "<leader>cp", "<cmd>let @+ = expand('%:p:h') | echo 'Current working directory copied to clipboard!'<CR>", { desc = "copy cwd to clipboard"})
 
 -- nvim filetree
 -- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "toggle filetree" })
