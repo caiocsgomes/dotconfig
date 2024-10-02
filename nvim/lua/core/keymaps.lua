@@ -11,6 +11,9 @@ keymap.set("n", "<Tab>", "<C-w>w", { desc = "switch between windows" })
 keymap.set("n", "<C-v>", "<C-w>v", { desc = "open vertical tab" })
 keymap.set("n", "<leader>w", ":w<CR>", { desc = "write file" })
 keymap.set("n", "<leader>q", ":q!<CR>", { desc = "quit without saving" })
+keymap.set("n", "tn", ":tabnew<CR>", { desc = "quit without saving" })
+keymap.set("n", "<C-n>", ":bnext<CR>")
+keymap.set("n", "<leader>cp", ":let @+ = expand('%:p:h')<CR>", { desc = "copy cwd to clipboard"})
 
 -- nvim filetree
 -- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "toggle filetree" })
@@ -66,17 +69,3 @@ keymap.set(
 --mini files
 keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<cr>")
 
-
-
-
-
-
-  -- nvim dap
---keymap.set("n", "<leader>d", "<cmd>lua require('dapui').toggle()<cr>", { desc = "toggle dap ui" })
--- vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" }) -- Default looks better
--- vim.fn.sign_define("DapStopped", { text = "▶️", texthl = "", linehl = "", numhl = "" }) -- Default looks better
---keymap.set("n", "<F5>", require("dap").continue)
---keymap.set("n", "<F10>", require("dap").step_over)
---keymap.set("n", "<F11>", require("dap").step_into)
---keymap.set("n", "<F12>", require("dap").step_out)
---keymap.set("n", "<leader>b", require("dap").toggle_breakpoint)
