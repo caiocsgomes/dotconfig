@@ -26,7 +26,7 @@ local act = wezterm.action
 -- For example, changing the color scheme:
 -- config.color_scheme = "GruvboxDarkHard"
 -- config.color_scheme = "MaterialOcean"
-config.color_scheme = "Fira Code"
+config.color_scheme = "Dark Pastel"
 -- config.font = wezterm.font_with_fallback({
 -- 	"GruvboxDarkHard",
 -- })
