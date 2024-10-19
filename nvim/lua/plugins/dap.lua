@@ -35,6 +35,14 @@ return {
           desc = "Eval",
           mode = { "n", "v" },
         },
+        {
+          "<leader>du",
+          function()
+            require("dapui").toggle()
+          end,
+          desc = "Eval",
+          mode = { "n", "v" },
+        },
       },
     },
     -- Virtual text.
@@ -193,78 +201,47 @@ return {
         },
       },
     }
-    dap.adapters["local-lua"] = {
-      type = "executable",
-      command = "node",
-      args = {
-        os.getenv('HOME') .. '/local-lua-debugger-vscode/extension/debugAdapter.js'
-      },
-      enrich_config = function(config, on_config)
-        if not config["extensionPath"] then
-          local c = vim.deepcopy(config)
-          -- 💀 If this is missing or wrong you'll see
-          -- "module 'lldebugger' not found" errors in the dap-repl when trying to launch a debug session
-          c.extensionPath = os.getenv('HOME') .. '/local-lua-debugger-vscode/'
-          on_config(c)
-        else
-          on_config(config)
-        end
-      end,
-    }
-    dap.configurations.lua = {
-      {
-        name = 'Current file (local-lua-dbg, lua)',
-        type = 'local-lua',
-        request = 'launch',
-        cwd = '${workspaceFolder}',
-        program = {
-          lua = 'lua5.4',
-          file = '${file}',
-        },
-        args = {},
-      },
-    }
     -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
-    -- dap.configurations.go = {
-    -- 	{
-    -- 		type = "delve",
-    -- 		name = "Debug",
-    -- 		request = "launch",
-    -- 		program = "./${relativeFileDirname}",
-    -- 	},
-    -- 	{
-    -- 		type = "delve",
-    -- 		name = "Debug test", -- configuration for debugging test files
-    -- 		request = "launch",
-    -- 		mode = "test",
-    -- 		program = "${file}",
-    -- 	},
-    -- 	-- works with go.mod packages and sub packages
-    -- 	{
-    -- 		type = "delve",
-    -- 		name = "Debug test (go.mod)",
-    -- 		request = "launch",
-    -- 		mode = "test",
-    -- 		program = "./${relativeFileDirname}",
-    -- 	},
-    -- }
-
-    dap.adapters.go = {
-      type = 'executable',
-      command = 'node',
-      args = { os.getenv('HOME') .. '/vscode-go/extension/dist/debugAdapter.js' },
-    }
     dap.configurations.go = {
-      {
-        type = 'go',
-        name = 'Debug',
-        request = 'launch',
-        showLog = false,
-        program = "${file}",
-        dlvToolPath = vim.fn.exepath('dlv'), -- Adjust to where delve is installed
-        args = { '--build-flags', '-gcflags=all=-N -l' },
-      },
+    	{
+    		type = "delve",
+    		name = "Debug",
+    		request = "launch",
+    		program = "./${relativeFileDirname}",
+    	},
+    	{
+    		type = "delve",
+    		name = "Debug test", -- configuration for debugging test files
+    		request = "launch",
+    		mode = "test",
+    		program = "${file}",
+    	},
+    	-- works with go.mod packages and sub packages
+    	{
+    		type = "delve",
+    		name = "Debug test (go.mod)",
+    		request = "launch",
+    		mode = "test",
+    		program = "./${relativeFileDirname}",
+    	},
     }
+
+    -- dap.adapters.go = {
+    --   type = 'executable',
+    --   command = 'node',
+    --   args = { os.getenv('HOME') .. '/vscode-go/extension/dist/debugAdapter.js' },
+    -- }
+    -- dap.configurations.go = {
+    --   {
+    --     type = 'go',
+    --     name = 'Debug',
+    --     request = 'launch',
+    --     showLog = false,
+    --     program = "${file}",
+    --     dlvToolPath = vim.fn.exepath('dlv'), -- Adjust to where delve is installed
+    --     args = { '--build-flags', '-gcflags=all=-N -l' },
+    --   },
+    -- }
     dap.listeners.after.event_initialized["dapui_config"] = function()
       dapui.open({})
     end

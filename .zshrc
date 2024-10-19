@@ -119,6 +119,7 @@ alias cd="z"
 alias k="kubectl"
 kn() { kubectl config set-context --current --namespace="$1" }
 kv() { kubectl get pod "$1" -o yaml | nvim }
+alias kc="k config current-context"
 
 ## Terraform
 alias tf="terraform"
@@ -139,3 +140,4 @@ wtt() {wezterm cli set-tab-title "$1"}
 
 ## Variables
 export LG_CONFIG_FILE=~/.config/nvim/lua/config/lazygit/config.yaml
+
