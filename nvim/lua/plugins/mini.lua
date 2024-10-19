@@ -53,6 +53,6 @@ return {
           width_preview = 25,
         },
       })
-    require("mini.surround").setup()
+    -- require("mini.surround").setup()
   end,
 }
