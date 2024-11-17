@@ -1,3 +1,10 @@
+- Describe what happens when you access google.com
+- Describe the difference between tcp and udp
+- Describe a three way handshake in tcp
+- What a good terraform module looks like
+- What is a docker image
+- What are cgroups and namespaces in linux
+
 1. Log File Parser
 
 	•	Challenge: Write a Go program that reads an Apache or NGINX log file, extracts relevant fields (like IP address, request path, status code, etc.), and generates a JSON report summarizing the top 10 IP addresses that made requests and the most requested URLs.
