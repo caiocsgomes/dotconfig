@@ -14,6 +14,7 @@ return {
         -- 	expanded = arrows.down,
         -- },
         floating = { border = "rounded" },
+        expand_lines = false,
         layouts = {
           {
             elements = {
@@ -44,6 +45,9 @@ return {
           mode = { "n", "v" },
         },
       },
+    -- config = function()
+    --   require("dapui").setup()
+    -- end,
     },
     -- Virtual text.
     {
@@ -199,6 +203,9 @@ return {
           "127.0.0.1:${port}",
           "2>&1 | grep -v '\\[debug-adapter stdout\\]'",
         },
+      },
+      options = {
+        detached = false,
       },
     }
     -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
