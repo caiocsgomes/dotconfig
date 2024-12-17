@@ -32,6 +32,9 @@ config.color_scheme = "Dark Pastel"
 -- })
 config.font_size = 14
 
+config.animation_fps = 1
+config.max_fps = 240
+
 config.keys = {
 	{ key = "w", mods = "CMD", action = wezterm.action.CloseCurrentPane({ confirm = false }) },
 	{ key = "LeftArrow", mods = "OPT", action = wezterm.action({ SendString = "\x1bb" }) },
