@@ -20,9 +20,13 @@ return {
     -- see the "default configuration" section below for full documentation on how to define
     -- your own keymap.
     keymap = {
-      preset = 'default',
+      preset = 'enter',
       ["<C-j>"] = { "select_next", "fallback" },
       ["<C-k>"] = { "select_prev", "fallback" },
+      ["<C-l>"] = { "select_and_accept" },
+      ["<C-PageDown>"] = { "scroll_documentation_down" },
+      ["<C-PageUp>"] = { "scroll_documentation_up" },
+      -- ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
     },
 
     appearance = {
@@ -39,8 +43,27 @@ return {
     -- elsewhere in your config, without redefining it, via `opts_extend`
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
-      -- optionally disable cmdline completions
-      -- cmdline = {},
+      cmdline = {},
+    },
+    completion = {
+      accept = {
+        -- experimental auto-brackets support
+        auto_brackets = {
+          enabled = true,
+        },
+      },
+      menu = {
+        draw = {
+          treesitter = { "lsp" },
+        },
+      },
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 200,
+      },
+      ghost_text = {
+        enabled = vim.g.ai_cmp,
+      },
     },
 
     -- experimental signature help support
