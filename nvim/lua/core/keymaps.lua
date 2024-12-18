@@ -14,11 +14,13 @@ keymap.set("n", "<leader>q", ":q!<CR>", { desc = "quit without saving" })
 keymap.set("n", "tn", "<cmd>tabnew<CR>", { desc = "quit without saving" })
 keymap.set("n", "<leader>n", "<cmd>bn<CR>")
 keymap.set("n", "<leader>b", "<cmd>bp<CR>")
-keymap.set("n", "<leader>cp", "<cmd>let @+ = expand('%:p:h') | echo 'Current working directory copied to clipboard!'<CR>", { desc = "copy cwd to clipboard"})
+keymap.set("n", "<leader>cp", "<cmd>let @+ = expand('%:p:h') | echo 'Current working directory copied to clipboard!'<CR>",
+  { desc = "copy cwd to clipboard" })
 
 -- fzf-lua
-keymap.set("n", "<leader>ff", function() require('fzf-lua').files() end, { desc = "Fzf Files" })
-keymap.set("n", "<leader>fs", function() require('fzf-lua').grep_visual() end, { desc = "Fzf String" })
+keymap.set("n", "<leader>ff", function() require('fzf-lua').files({ cmd = "rg --files --hidden" }) end,
+  { desc = "Fzf Files" })
+keymap.set("n", "<leader>fs", "<cmd> FzfLua live_grep<cr>", { desc = "Fzf String" })
 keymap.set("n", "<leader>fr", "<cmd>FzfLua registers<cr>", { desc = "Fzf Registers" })
 keymap.set("n", "<leader>fh", "<cmd>FzfLua help_tags<cr>", { desc = "Fzf Help Tags" })
 keymap.set("n", "<leader>fk", "<cmd>FzfLua keymaps<cr>", { desc = "Fzf Key Maps" })
@@ -56,4 +58,3 @@ keymap.set(
 
 --mini files
 keymap.set("n", "<leader>e", "<cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<cr>")
-
