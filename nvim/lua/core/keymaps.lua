@@ -16,26 +16,13 @@ keymap.set("n", "<leader>n", "<cmd>bn<CR>")
 keymap.set("n", "<leader>b", "<cmd>bp<CR>")
 keymap.set("n", "<leader>cp", "<cmd>let @+ = expand('%:p:h') | echo 'Current working directory copied to clipboard!'<CR>", { desc = "copy cwd to clipboard"})
 
--- nvim filetree
--- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "toggle filetree" })
-
--- telescope
-keymap.set(
-  "n",
-  "<leader>ff",
-  "<cmd>Telescope find_files<cr>",
-  { desc = "find files within current working directory, respects .gitignore" }
-)
-keymap.set(
-  "n",
-  "<leader>fs",
-  "<cmd>Telescope live_grep<cr>",
-  { desc = "search for string in current working directory" }
-)
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "search for string in current folder" })
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "list open buffers" })
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "search for help tags" })
-keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>")
+-- fzf-lua
+keymap.set("n", "<leader>ff", function() require('fzf-lua').files() end, { desc = "Fzf Files" })
+keymap.set("n", "<leader>fs", function() require('fzf-lua').grep_visual() end, { desc = "Fzf String" })
+keymap.set("n", "<leader>fr", "<cmd>FzfLua registers<cr>", { desc = "Fzf Registers" })
+keymap.set("n", "<leader>fh", "<cmd>FzfLua help_tags<cr>", { desc = "Fzf Help Tags" })
+keymap.set("n", "<leader>fk", "<cmd>FzfLua keymaps<cr>", { desc = "Fzf Key Maps" })
+keymap.set("n", "<leader>fb", "<cmd>FzfLua buffers<cr>", { desc = "Fzf Buffers" })
 
 -- resize windows
 keymap.set("n", "<leader>=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
