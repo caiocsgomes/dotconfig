@@ -45,9 +45,9 @@ return {
           mode = { "n", "v" },
         },
       },
-    -- config = function()
-    --   require("dapui").setup()
-    -- end,
+      -- config = function()
+      --   require("dapui").setup()
+      -- end,
     },
     -- Virtual text.
     {
@@ -168,6 +168,7 @@ return {
     dap.configurations.python = {
       {
         -- The first three options are required by nvim-dap
+        justMyCode = false,
         type = "python", -- the type here established the link to the adapter definition: `dap.adapters.python`
         request = "launch",
         name = "Launch file",
@@ -210,27 +211,27 @@ return {
     }
     -- https://github.com/go-delve/delve/blob/master/Documentation/usage/dlv_dap.md
     dap.configurations.go = {
-    	{
-    		type = "delve",
-    		name = "Debug",
-    		request = "launch",
-    		program = "./${relativeFileDirname}",
-    	},
-    	{
-    		type = "delve",
-    		name = "Debug test", -- configuration for debugging test files
-    		request = "launch",
-    		mode = "test",
-    		program = "${file}",
-    	},
-    	-- works with go.mod packages and sub packages
-    	{
-    		type = "delve",
-    		name = "Debug test (go.mod)",
-    		request = "launch",
-    		mode = "test",
-    		program = "./${relativeFileDirname}",
-    	},
+      {
+        type = "delve",
+        name = "Debug",
+        request = "launch",
+        program = "./${relativeFileDirname}",
+      },
+      {
+        type = "delve",
+        name = "Debug test", -- configuration for debugging test files
+        request = "launch",
+        mode = "test",
+        program = "${file}",
+      },
+      -- works with go.mod packages and sub packages
+      {
+        type = "delve",
+        name = "Debug test (go.mod)",
+        request = "launch",
+        mode = "test",
+        program = "./${relativeFileDirname}",
+      },
     }
 
     -- dap.adapters.go = {
