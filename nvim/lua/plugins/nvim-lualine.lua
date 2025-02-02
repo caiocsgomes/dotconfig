@@ -3,8 +3,8 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
     -- https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
-		local lualine_theme = require("lualine.themes.gruvbox")
-		-- local lualine_theme = require("lualine.themes.tokyonight")
+		-- local lualine_theme = require("lualine.themes.gruvbox")
+		local lualine_theme = require("lualine.themes.tokyonight")
 		-- local lualine_theme = require("lualine.themes.nord")
 
 		require("lualine").setup({

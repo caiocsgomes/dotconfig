@@ -32,27 +32,27 @@ return {
 	-- 		vim.cmd("colorscheme gruvbox")
 	-- 	end,
 	-- },
-	{
-		"sainnhe/gruvbox-material",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			-- Optionally configure and load the colorscheme
-			-- directly inside the plugin declaration.
-			vim.g.gruvbox_material_enable_italic = true
-			vim.cmd.colorscheme("gruvbox-material")
-		end,
-	},
 	-- {
-	-- 	"folke/tokyonight.nvim",
+	-- 	"sainnhe/gruvbox-material",
 	-- 	lazy = false,
 	-- 	priority = 1000,
-	-- 	opts = {},
 	-- 	config = function()
-	-- 		require("tokyonight").setup()
-	-- 		vim.cmd("colorscheme tokyonight")
+	-- 		-- Optionally configure and load the colorscheme
+	-- 		-- directly inside the plugin declaration.
+	-- 		vim.g.gruvbox_material_enable_italic = true
+	-- 		vim.cmd.colorscheme("gruvbox-material")
 	-- 	end,
 	-- },
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+			require("tokyonight").setup()
+			vim.cmd("colorscheme tokyonight")
+		end,
+	},
 	--   {
 	--     'AlexvZyl/nordic.nvim',
 	--     lazy = false,
