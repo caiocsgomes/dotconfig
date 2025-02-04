@@ -133,8 +133,9 @@ return {
       "<leader>dr",
       function()
         require("dap").repl.open()
+        -- require("dap").repl.open({ height = 15, width = 80 })
       end,
-      desc = "open repl",
+      desc = "Open REPL",
     },
   },
   config = function()
