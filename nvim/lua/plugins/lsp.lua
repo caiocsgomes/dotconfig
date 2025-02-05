@@ -26,7 +26,17 @@ return {
       servers = {
         bashls = {},
         dockerls = {},
-        pyright = {},
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "basic",  -- You can adjust this setting as needed
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+              },
+            },
+          },
+        },
         vimls = {},
         yamlls = {},
         terraformls = {},
