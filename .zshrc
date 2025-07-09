@@ -18,6 +18,7 @@ alias cli="wtt cli && cd ~/code"
 alias downloads="cd ~/Downloads"
 alias cd="z"
 alias gpp="git push"
+alias ga="git add"
 alias gs="git status"
 alias gp="git pull"
 git_main() {
@@ -66,4 +67,5 @@ export LG_CONFIG_FILE=~/.config/nvim/lua/config/lazygit/config.yaml
 ## fzf aliases
 alias fd='cd $(fd --type directory | fzf)' ## jump into folder
 alias fn='nvim $(fzf --preview "cat {}")' ## neovim into file
+alias fv='fzf --preview "cat {}"' ## neovim into file
 alias ff='cd "$(dirname "$(fzf)")"'
