@@ -41,3 +41,10 @@ helm template repo/chart-name --version 2024.1.6 --debug -f values.yaml
 ```bash
 helm template chart-repo/chart-name --version 1.0.0
 ```
+
+## Approach to see diff between two helm versions
+```bash
+helm template repo/chart --version 103.107.27 -f values.yaml > 103.107.27.yaml
+helm template repo/chart --version 103.107.28 -f values.yaml > 103.107.28.yaml
+diff -u 103.107.28.yaml 103.107.27.yaml
+```
