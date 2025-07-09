@@ -17,9 +17,25 @@ alias notes="cd ~/.config/notes/ && nn"
 alias cli="wtt cli && cd ~/code"
 alias downloads="cd ~/Downloads"
 alias cd="z"
-alias gp="git push"
+alias gpp="git push"
 alias gs="git status"
-alias gpl="git pull"
+alias gp="git pull"
+git_main() {
+  local main_branch=""
+  # Check if 'main' branch exists
+  if git show-ref --verify --quiet refs/heads/main || git show-ref --verify --quiet refs/remotes/origin/main; then
+    main_branch="main"
+  # Check if 'master' branch exists
+  elif git show-ref --verify --quiet refs/heads/master || git show-ref --verify --quiet refs/remotes/origin/master; then
+    main_branch="master"
+  else
+    echo "Neither 'main' nor 'master' branch found."
+    return 1
+  fi
+  echo "Checking out $main_branch branch..."
+  git checkout "$main_branch"
+}
+alias gm="git_main"
 
 ## Kubernetes
 alias k="kubectl"
