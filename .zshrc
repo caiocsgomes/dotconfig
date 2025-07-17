@@ -69,5 +69,5 @@ export LG_CONFIG_FILE=~/.config/nvim/lua/config/lazygit/config.yaml
 ## fzf aliases
 alias fd='cd $(fd --type directory | fzf)' ## jump into folder
 alias fn='nvim $(fzf --preview "cat {}")' ## neovim into file
-alias fv='fzf --preview "cat {}"' ## neovim into file
+alias fv='fzf --preview "cat {}"'
 alias ff='cd "$(dirname "$(fzf)")"'
