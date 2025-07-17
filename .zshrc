@@ -12,7 +12,6 @@ alias cdconfig="cd ~/.config"
 alias n="nvim"
 alias nn='wtt $(basename "$PWD") && nvim .'
 alias config="cd ~/.config/ && nvim"
-alias startday="sh ~/.config/scripts/startday.sh"
 alias notes="cd ~/.config/notes/ && nn"
 alias cli="wtt cli && cd ~/code"
 alias downloads="cd ~/Downloads"
