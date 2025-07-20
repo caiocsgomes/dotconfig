@@ -70,3 +70,6 @@ alias fd='cd $(fd --type directory | fzf)' ## jump into folder
 alias fn='nvim $(fzf --preview "cat {}")' ## neovim into file
 alias fv='fzf --preview "cat {}"'
 alias ff='cd "$(dirname "$(fzf)")"'
+
+## Environment Variables
+export XDG_CONFIG_HOME="$HOME/.config"

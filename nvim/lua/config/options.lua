@@ -15,3 +15,5 @@ opt.autoindent = true
 
 -- line wrapping
 opt.wrap = false
+
+vim.g.python_recommended_style = 0
