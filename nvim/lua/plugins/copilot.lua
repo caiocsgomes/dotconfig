@@ -14,12 +14,5 @@ return {
         desc = "Toggle (Copilot)",
       },
     },
-    opts = {
-      suggestion = {
-        keymap = {
-          acceptword = "<C-[>",
-        },
-      },
-    },
   },
 }
