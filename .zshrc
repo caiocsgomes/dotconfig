@@ -76,5 +76,8 @@ fcd() {
 alias fnvim='nvim $(fzf --preview "cat {}")' ## neovim into file
 alias fcat='fzf --preview "cat {}"'
 
+# tmux
+alias ta="tmux attach"
+
 ## Environment Variables
 export XDG_CONFIG_HOME="$HOME/.config"
