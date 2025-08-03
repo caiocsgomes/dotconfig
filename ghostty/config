@@ -17,7 +17,7 @@ cursor-text = 000000
 shell-integration-features = no-cursor
 
 # Splits:
-unfocused-split-opacity = 0.4
+unfocused-split-opacity = 0.7
 split-divider-color = A7DFEF
 
 # Key bindings:
@@ -28,12 +28,12 @@ keybind = alt+shift+i=inspector:toggle
 keybind = alt+equal=increase_font_size:1
 keybind = alt+minus=decrease_font_size:1
 keybind = alt+zero=reset_font_size
-keybind = super+right=new_split:right
-keybind = super+down=new_split:down
-keybind = ctrl+shift+k=goto_split:top
-keybind = ctrl+shift+j=goto_split:bottom
-keybind = ctrl+shift+h=goto_split:left
-keybind = ctrl+shift+l=goto_split:right
+keybind = super+r=new_split:right
+keybind = super+d=new_split:down
+keybind = super+k=goto_split:top
+keybind = super+j=goto_split:bottom
+keybind = super+h=goto_split:left
+keybind = super+l=goto_split:right
 keybind = super+c=copy_to_clipboard
 keybind = alt+shift+b=write_screen_file:paste
 keybind = alt+shift+enter=toggle_fullscreen

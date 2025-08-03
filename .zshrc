@@ -66,10 +66,15 @@ wtt() {wezterm cli set-tab-title "$1"}
 export LG_CONFIG_FILE=~/.config/nvim/lua/config/lazygit/config.yaml
 
 ## fzf aliases
-alias fd='cd $(fd --type directory | fzf)' ## jump into folder
-alias fn='nvim $(fzf --preview "cat {}")' ## neovim into file
-alias fv='fzf --preview "cat {}"'
-alias ff='cd "$(dirname "$(fzf)")"'
+fcd() {
+  local file
+  file=$(find . -type f 2>/dev/null | fzf)
+  if [ -n "$file" ]; then
+    cd "$(dirname "$file")"
+  fi
+}
+alias fnvim='nvim $(fzf --preview "cat {}")' ## neovim into file
+alias fcat='fzf --preview "cat {}"'
 
 ## Environment Variables
 export XDG_CONFIG_HOME="$HOME/.config"

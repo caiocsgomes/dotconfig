@@ -17,3 +17,4 @@ opt.autoindent = true
 opt.wrap = false
 
 vim.g.python_recommended_style = 0
+-- vim.g.lazyvim_python_lsp = "pylsp"
