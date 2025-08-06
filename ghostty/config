@@ -42,3 +42,4 @@ keybind = alt+shift+enter=toggle_fullscreen
 confirm-close-surface = false
 
 window-padding-balance = true
+macos-titlebar-proxy-icon = hidden
