@@ -29,6 +29,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
     { import = "lazyvim.plugins.extras.coding.blink" },
     { import = "lazyvim.plugins.extras.ai.copilot" },
+    { import = "lazyvim.plugins.extras.ai.copilot-chat" },
 
     -- import/override with your plugins
     { import = "plugins" },

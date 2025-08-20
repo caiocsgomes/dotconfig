@@ -75,9 +75,27 @@ fcd() {
 }
 alias fnvim='nvim $(fzf --preview "cat {}")' ## neovim into file
 alias fcat='fzf --preview "cat {}"'
+fzgrep() {
+  INITIAL_QUERY=""
+  RG_PREFIX="rg --line-number --no-heading --color=always --smart-case "
+  FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY'" \
+  fzf --ansi \
+      --disabled --query "$INITIAL_QUERY" \
+      --bind "change:reload:$RG_PREFIX {q} || true" \
+      --delimiter : \
+      --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' \
+      --preview-window 'up,60%,border-bottom,+{2}+3/3,~3'
+}
 
 # tmux
 alias ta="tmux attach"
 
 ## Environment Variables
 export XDG_CONFIG_HOME="$HOME/.config"
+
+
+## iterm2
+export TERM=xterm-256color
+
+
+export PATH=$HOME/.local/bin:$PATH

@@ -7,6 +7,10 @@ config.font = wezterm.font("JetBrains Mono", { weight = "Bold", italic = false }
 config.font_size = 14
 config.animation_fps = 240
 config.max_fps = 240
+config.hide_tab_bar_if_only_one_tab = true
+
+config.enable_scroll_bar = true
+
 config.leader = {
 	key = "a",
 	mods = "CTRL",
