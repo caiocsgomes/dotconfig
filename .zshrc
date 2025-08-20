@@ -75,7 +75,7 @@ fcd() {
 }
 alias fnvim='nvim $(fzf --preview "cat {}")' ## neovim into file
 alias fcat='fzf --preview "cat {}"'
-fzgrep() {
+fgrep() {
   INITIAL_QUERY=""
   RG_PREFIX="rg --line-number --no-heading --color=always --smart-case "
   FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY'" \
