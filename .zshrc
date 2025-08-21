@@ -73,9 +73,9 @@ fcd() {
     cd "$(dirname "$file")"
   fi
 }
-alias fnvim='nvim $(fzf --preview "cat {}")' ## neovim into file
-alias fcat='fzf --preview "cat {}"'
-fgrep() {
+alias fzfvim='nvim $(fzf --preview "cat {}")' ## neovim into file
+alias fzfcat='fzf --preview "cat {}"'
+fzfgrep() {
   INITIAL_QUERY=""
   RG_PREFIX="rg --line-number --no-heading --color=always --smart-case "
   FZF_DEFAULT_COMMAND="$RG_PREFIX '$INITIAL_QUERY'" \

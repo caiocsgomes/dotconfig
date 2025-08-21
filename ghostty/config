@@ -1,6 +1,8 @@
 # Font configuration:
-font-family = "Hasklug Nerd Font Mono Med"
+font-family = "Hasklug Nerd Font Mono Regular"
 font-family-italic = "Cartograph CF Italic"
+font-size = 15
+font-thicken = true
 # adjust-cell-width = -5%
 # adjust-cell-height = 20%
 # adjust-underline-position = 6
@@ -8,7 +10,9 @@ font-family-italic = "Cartograph CF Italic"
 # adjust-cursor-thickness = 150%
 #
 # Color theme:
-theme = gruvboxdark
+# ghostty +list-themes
+# theme = gruvboxdark
+theme = rose-pine
 
 # Cursor:
 cursor-color = F8F8F2
