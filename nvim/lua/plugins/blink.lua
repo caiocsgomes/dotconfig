@@ -4,7 +4,8 @@ return {
     keymap = {
       ["<C-k>"] = { "select_prev", "fallback" },
       ["<C-j>"] = { "select_next", "fallback" },
-      ["<C-l>"] = { "accept_and_enter", "fallback" },
+      -- ["<C-l>"] = { "accept_and_enter", "fallback" },
+      ["<Tab>"] = { "accept", "fallback" },
     },
   },
 }
