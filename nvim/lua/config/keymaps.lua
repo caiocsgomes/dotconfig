@@ -115,3 +115,6 @@ end
 vim.keymap.set("i", "<C-e>", function()
   return vim.api.nvim_replace_termcodes(_G.smart_end_of_line(), true, true, true)
 end, { expr = true })
+vim.keymap.set("n", "<leader>e", function()
+  require("mini.files").open()
+end, { desc = "Open MiniFiles" })
