@@ -4,3 +4,7 @@ github-copilot/*
 2024*
 yarn/
 .credentials.sh
+helm/
+k9s/
+packer/
+tmux/
