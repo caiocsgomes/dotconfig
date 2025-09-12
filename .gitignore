@@ -8,3 +8,5 @@ helm/
 k9s/
 packer/
 tmux/
+dlv/
+configstore/
