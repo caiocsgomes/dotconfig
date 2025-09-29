@@ -11,5 +11,8 @@ return {
         mode = { "n", "v" },
       },
     },
+    opts = {
+      completion = { enabled = false },
+    },
   },
 }
