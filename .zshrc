@@ -66,7 +66,7 @@ wtt() {wezterm cli set-tab-title "$1"}
 export LG_CONFIG_FILE=~/.config/nvim/lua/config/lazygit/config.yaml
 
 ## fzf aliases
-fcd() {
+fzfcd() {
   local file
   file=$(find . -type f 2>/dev/null | fzf)
   if [ -n "$file" ]; then
