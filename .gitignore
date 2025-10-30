@@ -10,3 +10,4 @@ packer/
 tmux/
 dlv/
 configstore/
+colima/

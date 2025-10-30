@@ -122,3 +122,19 @@ vim.keymap.set("n", "<leader>e", function()
     MiniFiles.reveal_cwd()
   end, 30)
 end, { desc = "Open MiniFiles" })
+
+-- Yank current buffer filepath to clipboard
+vim.keymap.set("n", "<leader>yP", function()
+  local filepath = vim.fn.expand("%:p")
+  vim.fn.setreg("+", filepath)
+  vim.notify("Copied filepath: " .. filepath)
+end, { desc = "Yank full filepath to clipboard" })
+
+-- Yank filepath relative to working directory
+vim.keymap.set("n", "<leader>yp", function()
+  local relpath = vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
+  vim.fn.setreg("+", relpath)
+  vim.notify("Copied path relative to CWD: " .. relpath)
+end, { desc = "Yank filepath relative to current working directory" })
+
+vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
