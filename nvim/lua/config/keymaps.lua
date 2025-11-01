@@ -137,4 +137,4 @@ vim.keymap.set("n", "<leader>yp", function()
   vim.notify("Copied path relative to CWD: " .. relpath)
 end, { desc = "Yank filepath relative to current working directory" })
 
-vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
+-- vim.keymap.set("n", "gp", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true })
