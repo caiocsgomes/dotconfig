@@ -12,7 +12,7 @@ font-thicken = true
 # Color theme:
 # ghostty +list-themes
 # theme = gruvboxdark
-theme = Rose Pine
+theme = Batman
 
 # Cursor:
 cursor-color = F8F8F2
