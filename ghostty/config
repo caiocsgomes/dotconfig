@@ -50,7 +50,7 @@ macos-titlebar-proxy-icon = hidden
 
 
 ## Background
-background-image = ~/.config/ghostty/moon.jpg
+background-image = ~/.config/ghostty/dark-night.png
 background-image-fit = cover
 background-image-opacity = 0.5
 background-blur-radius = 40
