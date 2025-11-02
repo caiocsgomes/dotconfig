@@ -1,13 +1,45 @@
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
-  { "rose-pine/neovim", name = "rose-pine" },
-  -- Configure LazyVim to load gruvbox
+  -- rose-pine
+  -- {
+  --   "rose-pine/neovim",
+  --   name = "rose-pine",
+  --   styles = {
+  --     transparency = true,
+  --   },
+  -- },
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "rose-pine",
+  --   },
+  -- },
+  -- gruvbox
+  -- {
+  --   "ellison/gruvbox.nvim",
+  --   opt = {
+  --     transparent = true,
+  --     styles = {
+  --       sidebars = "transparent",
+  --       float = "transparent",
+  --     },
+  --   },
+  -- },
+  --
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "gruvbox",
+  --   },
+  -- },
+  -- transparent
   {
-    "LazyVim/LazyVim",
+    "folke/tokyonight.nvim",
     opts = {
-      colorscheme = "rose-pine",
       transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
     },
   },
 }
