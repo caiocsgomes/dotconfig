@@ -1,0 +1,61 @@
+format = """
+[╭](bold overlay1)🛸 \
+$directory\
+$git_branch\
+$git_status\
+$kubernetes \
+$time \
+\n$character"""
+
+palette = 'gruvbox'
+
+[palettes.gruvbox]
+color_fg0 = '#ebdbb2'   # text foreground
+color_bg0 = '#3C4841'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[character]
+format = """
+[╰─$symbol](fg:overlay1) """
+success_symbol = '[](fg:bold text)'
+error_symbol = '[](fg:bold red)'
+
+[directory]
+# style = "fg:color_fg0 bg:color_bg0"
+format = '$path'
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+style = "fg:color_yellow"
+disabled = false
+symbol = ""
+format = '( | [$symbol]($style) $branch)'
+
+[git_status]
+disabled = false
+style = "fg:color_orange"
+format = '( [$all_status]($style))'
+
+[kubernetes]
+disabled = false
+style = "fg:color_yellow"
+format = '( | [$context]($style)( in [$namespace]($style)))'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+format = '| $time'

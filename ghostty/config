@@ -11,8 +11,8 @@ font-thicken = true
 #
 # Color theme:
 # ghostty +list-themes
-# theme = gruvboxdark
-theme = Batman
+theme = Rose Pine
+# theme = TokyoNight Night
 
 # Cursor:
 cursor-color = F8F8F2
@@ -47,3 +47,10 @@ confirm-close-surface = false
 
 window-padding-balance = true
 macos-titlebar-proxy-icon = hidden
+
+
+## Background
+background-image = ~/.config/ghostty/moon.jpg
+background-image-fit = cover
+background-image-opacity = 0.5
+background-blur-radius = 40
