@@ -1,5 +1,4 @@
 format = """
-[╭](bold overlay1)🛸 \
 $directory\
 $git_branch\
 $git_status\
@@ -7,6 +6,14 @@ $kubernetes \
 $time \
 \n$character"""
 
+# format = """
+# [╭](bold overlay1)🌎 \
+# $directory\
+# $git_branch\
+# $git_status\
+# $kubernetes \
+# $time \
+# \n$character"""
 palette = 'gruvbox'
 
 [palettes.gruvbox]
@@ -50,12 +57,20 @@ disabled = false
 style = "fg:color_orange"
 format = '( [$all_status]($style))'
 
-[kubernetes]
-disabled = false
-style = "fg:color_yellow"
-format = '( | [$context]($style)( in [$namespace]($style)))'
-
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
 format = '| $time'
+# Your original [kubernetes] header, wherever it is (e.g., line 40)
+
+[kubernetes]
+disabled = false
+format = ' | [$symbol$context( \($namespace\))]($style) '
+symbol = "⎈ "
+style = "bold blue" # Default style
+[[kubernetes.contexts]]
+context_pattern = ".*-se-.*"
+style = "bold green"
+[[kubernetes.contexts]]
+context_pattern = ".*-pe-.*"
+style = "bold bright-red"
