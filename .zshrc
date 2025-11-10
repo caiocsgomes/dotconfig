@@ -39,6 +39,7 @@ git_main() {
   git checkout "$main_branch"
 }
 alias gm="git_main"
+alias gr="gm && gp"
 
 ## Credentials
 source ~/.config/.credentials.sh
