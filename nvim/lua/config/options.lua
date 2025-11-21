@@ -23,3 +23,5 @@ vim.g.lazyvim_python_ruff = "ruff"
 vim.g.lazyvim_picker = "fzf"
 
 vim.keymap.set("t", "jk", [[<C-\><C-n>]])
+
+vim.opt.clipboard = ""

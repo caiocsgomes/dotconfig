@@ -11,8 +11,8 @@ font-thicken = true
 #
 # Color theme:
 # ghostty +list-themes
-theme = Rose Pine
-# theme = TokyoNight Night
+# theme = Rose Pine
+theme = TokyoNight Night
 
 # Cursor:
 cursor-color = F8F8F2
