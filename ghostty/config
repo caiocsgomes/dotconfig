@@ -50,7 +50,7 @@ macos-titlebar-proxy-icon = hidden
 
 
 ## Background
-background-image = ~/.config/ghostty/mount-fuji.jpeg
-background-image-fit = cover
-background-image-opacity = 0.5
+# background-image = ~/.config/ghostty/mount-fuji.jpeg
+# background-image-fit = cover
+# background-image-opacity = 0.5
 # background-blur-radius = 40
