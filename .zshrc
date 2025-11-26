@@ -2,7 +2,7 @@
 # ZSH_THEME=robbyrussel
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="simple"
-plugins=(docker terraform kubectl helm git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(docker terraform kubectl helm git zsh-autosuggestions zsh-syntax-highlighting gh git-commit git-extras)
 eval "$(zoxide init zsh)"
 source $ZSH/oh-my-zsh.sh
 ## Aliases
@@ -11,34 +11,13 @@ alias cdpersonal="cd ~/personal"
 alias cdcode="cd ~/code"
 alias cdconfig="cd ~/.config"
 alias n="nvim"
-alias nn='wtt $(basename "$PWD") && nvim .'
+# alias nn='wtt $(basename "$PWD") && nvim .'
 alias config="cd ~/.config/ && nvim"
 alias notes="cd ~/.config/notes/ && nn"
-alias cli="wtt cli && cd ~/code"
-alias downloads="cd ~/Downloads"
+# alias cli="wtt cli && cd ~/code"
+alias dwl="cd ~/Downloads"
 alias cd="z"
 alias c="clear"
-alias gpp="git push"
-alias ga="git add"
-alias gc="git commit -m"
-alias gs="git status"
-alias gp="git pull"
-git_main() {
-  local main_branch=""
-  # Check if 'main' branch exists
-  if git show-ref --verify --quiet refs/heads/main || git show-ref --verify --quiet refs/remotes/origin/main; then
-    main_branch="main"
-  # Check if 'master' branch exists
-  elif git show-ref --verify --quiet refs/heads/master || git show-ref --verify --quiet refs/remotes/origin/master; then
-    main_branch="master"
-  else
-    echo "Neither 'main' nor 'master' branch found."
-    return 1
-  fi
-  echo "Checking out $main_branch branch..."
-  git checkout "$main_branch"
-}
-alias gm="git_main"
 
 ## Credentials
 source ~/.config/.credentials.sh
@@ -95,4 +74,4 @@ eval "$(starship init zsh)"
 export PATH=$HOME/.local/bin:$PATH
 
 ## Github cli
-export EDITOR=vim
+export EDITOR=nvim
