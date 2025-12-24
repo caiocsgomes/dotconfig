@@ -4,5 +4,9 @@ return {
     windows = {
       preview = false,
     },
+    mappings = {
+      -- Map 'w' to synchronize (save) the file tree changes
+      synchronize = "w",
+    },
   },
 }

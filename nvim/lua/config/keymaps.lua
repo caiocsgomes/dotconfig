@@ -7,6 +7,7 @@ keymap.set("i", "jk", "<ESC>", { desc = "ESC to enter normal mode" })
 vim.keymap.set("n", "<leader>,", "mzA,<Esc>`z", { desc = "add comma to end of line" })
 vim.keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "add semicolon to end of line" })
 vim.keymap.set("i", "jk", "<ESC>", { desc = "ESC to enter normal mode" })
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 function _G.smart_end_of_line()
   -- Check if we're in insert mode

@@ -75,6 +75,6 @@ export PATH=$HOME/.local/bin:$PATH
 
 ## Github cli
 export EDITOR=nvim
-export gpl="gh pr list | fzf --preview 'gh pr view {1}' --preview-window=up:70% | awk '{print $1}' | xargs gh pr view --web"
-export gpv="gh pr view --web"
-export gpc="gh pr create"
+alias gplist="gh pr list | fzf --preview 'gh pr view {1}' --preview-window=up:70% | awk '{print \$1}' | xargs gh pr view --web"
+alias gpview="gh pr view --web"
+alias gpcreate="gh pr create"
