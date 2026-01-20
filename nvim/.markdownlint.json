@@ -1,0 +1,20 @@
+{
+  "default": false,
+  "line-length": false,
+  "no-trailing-spaces": false,
+  "no-hard-tabs": false,
+  "no-multiple-blanks": false,
+  "no-duplicate-heading": false,
+  "no-trailing-punctuation": false,
+  "no-inline-html": false,
+  "no-bare-urls": false,
+  "fenced-code-language": false,
+  "first-line-heading": false,
+  "heading-style": false,
+  "list-marker-space": false,
+  "no-emphasis-as-heading": false,
+  "blanks-around-headings": false,
+  "blanks-around-fences": false,
+  "no-space-in-code": false,
+  "required-headings": false
+}

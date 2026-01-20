@@ -31,6 +31,10 @@ return {
           },
         },
       },
+      -- Disable marksman LSP for markdown files
+      marksman = {
+        filetypes = {}, -- Empty list means no filetypes will trigger this LSP
+      },
     },
   },
 }
