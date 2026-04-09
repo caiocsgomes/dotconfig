@@ -30,9 +30,7 @@ opt.wrap = false
 -- ============================================================================
 -- Clipboard
 -- ============================================================================
--- Disable clipboard integration to prevent unintended yanks to system clipboard
--- This forces explicit use of "+y for system clipboard operations
--- Benefits: More intentional copying, prevents accidental clipboard pollution
+-- Don't sync with system clipboard by default (yank keymaps handle this)
 opt.clipboard = ""
 
 -- ============================================================================
