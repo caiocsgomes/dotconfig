@@ -2,8 +2,15 @@
 # ZSH_THEME=robbyrussel
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="simple"
-plugins=(docker terraform kubectl helm git zsh-autosuggestions zsh-syntax-highlighting gh git-commit git-extras)
-eval "$(zoxide init zsh)"
+# Trimmed plugins for faster startup (removed git-commit, git-extras)
+# Trimmed for faster startup (these registered ~851 completion defs): docker terraform kubectl helm
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting gh)
+
+# Let OMZ run a single compinit; skip its slow compaudit security check.
+# OMZ already caches the completion dump daily.
+export ZSH_DISABLE_COMPFIX=true
+skip_global_compinit=1
+
 source $ZSH/oh-my-zsh.sh
 ## Aliases
 alias homelab="cd ~/personal/homelab"
@@ -18,6 +25,12 @@ alias notes="cd ~/.config/notes/ && nn"
 alias dwl="cd ~/Downloads"
 alias cd="z"
 alias c="clear"
+
+## eza (ls replacement)
+alias ls="eza --icons --group-directories-first"
+alias ll="eza -l --icons --group-directories-first --git"
+alias la="eza -la --icons --group-directories-first --git"
+alias lt="eza --tree --level=2 --icons"
 
 ## Credentials
 source ~/.config/.credentials.sh
@@ -46,6 +59,13 @@ fzfcd() {
 }
 alias fzfvim='nvim $(fzf --preview "cat {}")' ## neovim into file
 alias fzfcat='fzf --preview "cat {}"'
+fzfpath() { ## realpath of selected file, copied to clipboard
+  local file
+  file=$(fzf --preview "cat {}")
+  if [ -n "$file" ]; then
+    realpath "$file" | tee /dev/tty | pbcopy
+  fi
+}
 fzfgrep() {
   INITIAL_QUERY=""
   RG_PREFIX="rg --line-number --no-heading --color=always --smart-case "

@@ -34,6 +34,13 @@ opt.wrap = false
 opt.clipboard = ""
 
 -- ============================================================================
+-- Intro Screen
+-- ============================================================================
+-- Remove the "I" flag so Neovim shows its intro/splash screen (version + sponsor)
+-- on an empty startup buffer. LazyVim sets "I" by default to hide it.
+opt.shortmess:remove("I")
+
+-- ============================================================================
 -- Language Server Configuration
 -- ============================================================================
 -- Python: Use basedpyright for type checking and ruff for linting/formatting
