@@ -101,4 +101,4 @@ alias gpview="gh pr view --web"
 alias gpcreate="gh pr create"
 
 ## lazygit
-export lg="lazygit"
+alias lg="lazygit"
