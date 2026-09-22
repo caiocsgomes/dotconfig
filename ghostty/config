@@ -12,10 +12,12 @@ font-thicken = true
 # Color theme:
 # ghostty +list-themes
 # theme = Rose Pine
-theme = TokyoNight Night
+# theme = TokyoNight Night
+# Nvim uses "Gruvbox Dark Hard" (#1d2021). This theme is lighter (#282828).
+theme = Gruvbox Dark
 
 # Cursor:
-cursor-color = F8F8F2
+cursor-color = FE8019
 cursor-style-blink = false
 cursor-text = 000000
 shell-integration-features = no-cursor

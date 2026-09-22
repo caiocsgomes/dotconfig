@@ -1,27 +1,34 @@
 -- Colorscheme configuration
--- Current: Tokyo Night theme (default LazyVim colorscheme)
+-- Current: Gruvbox Dark, hard contrast (background #1d2021)
 --
--- To enable transparency, uncomment the opts section below
+-- Ghostty uses the "Gruvbox Dark" theme (background #282828). Nvim uses the
+-- hard variant. Both use the same palette, but the nvim pane is darker. This
+-- shows the border between the terminal and the editor.
+--
 -- To switch to a different colorscheme:
 --   1. Add the plugin spec for your chosen theme
---   2. Configure LazyVim to use it:
---      { "LazyVim/LazyVim", opts = { colorscheme = "your-theme-name" } }
+--   2. Set the LazyVim colorscheme option below
 --
 -- Popular alternatives:
+--   - tokyonight: { "folke/tokyonight.nvim" }
 --   - rose-pine: { "rose-pine/neovim", name = "rose-pine" }
---   - gruvbox: { "ellisonleao/gruvbox.nvim" }
 --   - catppuccin: { "catppuccin/nvim", name = "catppuccin" }
 
 return {
   {
-    "folke/tokyonight.nvim",
-    -- Uncomment to enable transparent background
-    -- opts = {
-    --   transparent = true,
-    --   styles = {
-    --     sidebars = "transparent",
-    --     floats = "transparent",
-    --   },
-    -- },
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    opts = {
+      contrast = "hard", -- background #1d2021
+      -- Uncomment to enable transparent background
+      -- transparent_mode = true,
+    },
+  },
+
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "gruvbox",
+    },
   },
 }

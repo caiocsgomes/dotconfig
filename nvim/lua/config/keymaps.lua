@@ -14,6 +14,17 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode" })
 keymap.set("t", "jk", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- ============================================================================
+-- Saving and Quitting
+-- ============================================================================
+-- Save every modified buffer, not only the current one.
+-- The LazyVim default <C-s> maps to :w, which writes the current buffer only.
+keymap.set("n", "<leader>W", "<cmd>wa<cr>", { desc = "Save all files" })
+
+-- Save all files, then quit without a prompt.
+-- LazyVim maps <leader>qq to :qa, which asks about terminals and scratch buffers.
+keymap.set("n", "<leader>qq", "<cmd>silent! wa<cr><cmd>qa!<cr>", { desc = "Save all and quit" })
+
+-- ============================================================================
 -- Line Editing Shortcuts
 -- ============================================================================
 -- Add punctuation to end of line without moving cursor
@@ -23,8 +34,38 @@ keymap.set("n", "<leader>;", "mzA;<Esc>`z", { desc = "Add semicolon to end of li
 -- ============================================================================
 -- Clipboard Operations
 -- ============================================================================
--- Yank to system clipboard (since we disabled default clipboard integration)
-keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
+-- Yank to system clipboard. options.lua sets clipboard = "", so plain y stays local.
+keymap.set("v", "<leader>y", [["+y]], { desc = "Yank to system clipboard" })
+
+-- <leader>y is the system-clipboard yank operator in normal mode.
+-- It accepts any motion, text object, or count: <leader>yw, <leader>yi", <leader>y2j.
+-- The mapping reads the next key with getcharstr instead of relying on more
+-- <leader>y... mappings. Extra mappings would make <leader>y ambiguous, and
+-- Neovim would wait for timeoutlen before it decided which one you meant.
+-- Two keys are not motions, so they keep their own meaning:
+--   p -> copy the path relative to the CWD
+--   P -> copy the absolute path
+keymap.set("n", "<leader>y", function()
+  local ok, key = pcall(vim.fn.getcharstr)
+  -- Abort on <Esc>, <C-c>, or an interrupt.
+  if not ok or key == "" or key == "\27" or key == "\3" then
+    return ""
+  end
+
+  if key == "p" or key == "P" then
+    -- vim.notify can open a window. Defer it, because an expr mapping holds textlock.
+    vim.schedule(function()
+      local path = key == "P" and vim.fn.expand("%:p") or vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
+      vim.fn.setreg("+", path)
+      vim.notify("Copied path: " .. path)
+    end)
+    return ""
+  end
+
+  -- Feed the key back. Neovim waits for the rest of an incomplete motion,
+  -- so <leader>yi then " completes as "+yi".
+  return [["+y]] .. key
+end, { expr = true, desc = "Yank to system clipboard (motion)" })
 
 -- ============================================================================
 -- Smart End of Line
@@ -47,19 +88,4 @@ keymap.set("n", "<leader>e", function()
   end, 30)
 end, { desc = "Toggle file explorer" })
 
--- ============================================================================
--- Path Copying
--- ============================================================================
--- Copy full absolute filepath to clipboard
-keymap.set("n", "<leader>yP", function()
-  local filepath = vim.fn.expand("%:p")
-  vim.fn.setreg("+", filepath)
-  vim.notify("Copied filepath: " .. filepath)
-end, { desc = "Copy absolute filepath" })
-
--- Copy relative filepath (from CWD) to clipboard
-keymap.set("n", "<leader>yp", function()
-  local relpath = vim.fn.fnamemodify(vim.fn.expand("%"), ":.")
-  vim.fn.setreg("+", relpath)
-  vim.notify("Copied path relative to CWD: " .. relpath)
-end, { desc = "Copy relative filepath" })
+-- Path copying lives in the <leader>y operator above. See <leader>yp and <leader>yP.

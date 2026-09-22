@@ -25,6 +25,7 @@ alias notes="cd ~/.config/notes/ && nn"
 alias dwl="cd ~/Downloads"
 alias cd="z"
 alias c="clear"
+alias k="kubectl"
 
 ## eza (ls replacement)
 alias ls="eza --icons --group-directories-first"
