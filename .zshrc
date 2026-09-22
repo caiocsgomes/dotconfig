@@ -99,3 +99,6 @@ export EDITOR=nvim
 alias gplist="gh pr list | fzf --preview 'gh pr view {1}' --preview-window=up:70% | awk '{print \$1}' | xargs gh pr view --web"
 alias gpview="gh pr view --web"
 alias gpcreate="gh pr create"
+
+## lazygit
+export lg="lazygit"
