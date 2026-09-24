@@ -102,3 +102,6 @@ alias gpcreate="gh pr create"
 
 ## lazygit
 alias lg="lazygit"
+
+## opencode
+alias oc="opencode"
