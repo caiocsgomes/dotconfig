@@ -6,10 +6,9 @@ return {
         enabled = false,
       },
       picker = {
-        hidden = false, -- for hidden files
+        hidden = true, -- for hidden files
         ignored = false, -- for .gitignore files
       },
-      files = { hidden = true },
       dashboard = {
         enabled = false,
       },

@@ -107,3 +107,6 @@ alias lg="lazygit"
 
 ## opencode
 alias oc="opencode"
+
+## terraform
+alias tf="terraform"
