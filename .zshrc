@@ -23,7 +23,6 @@ alias config="cd ~/.config/ && nvim"
 alias notes="cd ~/.config/notes/ && nn"
 # alias cli="wtt cli && cd ~/code"
 alias dwl="cd ~/Downloads"
-alias cd="z"
 alias c="clear"
 alias k="kubectl"
 
@@ -92,6 +91,9 @@ export TERM=xterm-256color
 ## Starship
 # export STARSHIP_CONFIG=~/.config/starship.toml
 eval "$(starship init zsh)"
+
+## zoxide (smart cd)
+eval "$(zoxide init zsh --cmd cd)"
 export PATH=$HOME/.local/bin:$PATH
 
 ## Github cli
